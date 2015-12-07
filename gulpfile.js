@@ -6,7 +6,9 @@ var shell = require('gulp-shell');
 var gulptil = require('gulp-util');
 
 // Variables
-var gitCommit = `git commit -m "v0.0.5"`;
+var version = '0.0.5';
+var gitCommit = `git commit -m ${version}`;
+var gitTag = `git tag v${version}`;
 
 gulp.task('npm-pub',shell.task([
     `npm publish`
@@ -34,10 +36,16 @@ gulp.task('git-commit', shell.task([
 ));
 
 gulp.task('git-push', shell.task([
-  `git push`
+  `git push`,
  ]
 ))
 
+gulp.task('git-tag', shell.task([
+   gitTag,
+   `git tag --push`
+  ]
+))
+
 gulp.task('push-to-git', function(){
-  return runSequence('git-add','git-commit','git-push');
+  return runSequence('git-add','git-commit','git-push','git-tag');
 });
