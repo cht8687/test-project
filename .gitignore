@@ -19,4 +19,3 @@ node_modules
 /example/
 .coveralls.yml
 /reports/
-gulpfile.js
