@@ -6,7 +6,7 @@ var shell = require('gulp-shell');
 var gulptil = require('gulp-util');
 
 // Variables
-var gitCommit = `git commit -m "v0.0.4"`;
+var gitCommit = `git commit -m "v0.0.5"`;
 
 gulp.task('npm-pub',shell.task([
     `npm publish`
