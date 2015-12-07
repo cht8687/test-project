@@ -42,7 +42,7 @@ gulp.task('git-push', shell.task([
 
 gulp.task('git-tag', shell.task([
    gitTag,
-   `git tag --push`
+   `git push --tags`
   ]
 ))
 
