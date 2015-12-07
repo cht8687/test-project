@@ -6,7 +6,7 @@ var shell = require('gulp-shell');
 var gulptil = require('gulp-util');
 
 // Variables
-var version = '0.0.6';
+var version = '0.0.9';
 var gitCommit = `git commit -m ${version}`;
 var gitTag = `git tag v${version}`;
 
@@ -16,7 +16,7 @@ gulp.task('npm-pub',shell.task([
 ));
 
 gulp.task('moveToDest',['npm-pub'], function(){
-  gutil.log('Moving example files to github.io...');
+  gulptil.log('Moving example files to github.io...');
   return gulp.src('dist/*.js')
     .pipe(gulp.dest(destFolderPath))
 });
