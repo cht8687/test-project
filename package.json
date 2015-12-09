@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/cht8687/test-project.git#readme",
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -47,6 +47,8 @@
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-shell": "^0.5.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
     "run-sequence": "^1.1.5"
   }
 }
