@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import ReactListView from 'react-listview-sticky-header';
-import { DATA } from './data';
+import ReactAccordion from 'react-accordion-components';
+import {
+  DATA,
+  OPTIONS
+} from './data';
+
+
 
 let styles = {
   outerDiv: {
-    height: '400px',
     overflowY: 'auto',
-    outline: '1px dashed blue',
-    width: '400px',
+    outline: '1px solid #ADBCE0',
+    width: '410px',
   },
 
   ul: {
@@ -23,10 +27,12 @@ let styles = {
   },
 
   listHeader: {
-    width: '383px',
+    width: '390px',
     height: '20px',
-    background: 'green',
-    color: 'white'
+    background: 'grey',
+    color: 'white',
+    padding: '5px 0px 5px 20px',
+    marginBottom: '3px'
   },
 
   listItems: {
@@ -38,8 +44,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <ReactListView 
+      <ReactAccordion 
         data={DATA} 
+        options={OPTIONS}
         headerAttName="headerName"
         itemsAttName="items" 
         styles={styles}
