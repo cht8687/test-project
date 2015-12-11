@@ -9,7 +9,7 @@ var args = require('yargs').argv;
 var gulpprint = require('gulp-print');
 
 // Variables
-var version = '0.1.4';
+var version = '0.1.5';
 var gitCommit = `git commit -m ${version}`;
 var gitTag = `git tag v${version}`;
 

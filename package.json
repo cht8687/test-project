@@ -1,6 +1,6 @@
 {
   "name": "self-test-project-001",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "self-test-poject",
   "main": "dist/index.js",
   "scripts": {
