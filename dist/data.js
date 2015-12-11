@@ -4,113 +4,34 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var DATA = [{
-  headerName: "ListA",
+  headerName: "Section 1",
+  isOpened: true,
   items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }, {
-    title: "items4"
-  }, {
-    title: "items5"
-  }, {
-    title: "items6"
+    paragraph: "Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate."
   }]
 }, {
-  headerName: "ListB",
+  headerName: "Section 2",
+  isOpened: false,
   items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }, {
-    title: "items4"
-  }, {
-    title: "items5"
-  }, {
-    title: "items6"
+    paragraph: "Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate."
   }]
 }, {
-  headerName: "ListC",
+  headerName: "Section 3",
+  isOpened: false,
   items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }, {
-    title: "items4"
-  }, {
-    title: "items5"
-  }, {
-    title: "items6"
+    paragraph: "Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate."
   }]
 }, {
-  headerName: "ListD",
+  headerName: "Section 4",
+  isOpened: false,
   items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }, {
-    title: "items4"
-  }, {
-    title: "items5"
-  }, {
-    title: "items6"
-  }]
-}, {
-  headerName: "ListE",
-  items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }, {
-    title: "items4"
-  }, {
-    title: "items5"
-  }, {
-    title: "items6"
-  }]
-}, {
-  headerName: "ListF",
-  items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }]
-}, {
-  headerName: "ListG",
-  items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
-  }, {
-    title: "items4"
-  }, {
-    title: "items5"
-  }, {
-    title: "items6"
-  }]
-}, {
-  headerName: "ListH",
-  items: [{
-    title: "items1"
-  }, {
-    title: "items2"
-  }, {
-    title: "items3"
+    paragraph: "Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate."
   }]
 }];
+
 exports.DATA = DATA;
+var OPTIONS = {
+  autoClapse: true
+};
+exports.OPTIONS = OPTIONS;
 //# sourceMappingURL=data.js.map
