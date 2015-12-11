@@ -4,9 +4,12 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var shell = require('gulp-shell');
 var gulptil = require('gulp-util');
+var gulpif = require('gulp-if');
+var args = require('yargs').argv;
+var gulpprint = require('gulp-print');
 
 // Variables
-var version = '0.1.2';
+var version = '0.1.4';
 var gitCommit = `git commit -m ${version}`;
 var gitTag = `git tag v${version}`;
 
@@ -18,6 +21,7 @@ gulp.task('npm-pub',shell.task([
 gulp.task('moveToDest',['npm-pub'], function(){
   gulptil.log('Moving example files to github.io...');
   return gulp.src('dist/*.js')
+    .pipe(gulpif(args.verbase, gulpprint()))
     .pipe(gulp.dest(destFolderPath))
 });
 

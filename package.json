@@ -1,6 +1,6 @@
 {
   "name": "self-test-project-001",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "self-test-poject",
   "main": "dist/index.js",
   "scripts": {
@@ -34,6 +34,7 @@
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.3",
     "gulp": "^3.9.0",
+    "gulp-if": "^2.0.0",
     "gulp-shell": "^0.5.1",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^1.6.1",
@@ -42,7 +43,8 @@
     "rimraf": "^2.4.3",
     "run-sequence": "^1.1.5",
     "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "yargs": "^3.31.0"
   },
   "dependencies": {
     "gulp": "^3.9.0",
