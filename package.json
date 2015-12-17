@@ -38,6 +38,7 @@
     "gulp-shell": "^0.5.1",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^1.6.1",
+    "mingify": "0.0.2",
     "parallelshell": "^2.0.0",
     "react-hot-loader": "^1.2.9",
     "rimraf": "^2.4.3",

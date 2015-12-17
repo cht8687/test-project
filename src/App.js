@@ -4,6 +4,7 @@ import {
   DATA,
   OPTIONS
 } from './data';
+import mingify from 'mingify';
 
 
 
@@ -43,14 +44,18 @@ let styles = {
 export default class App extends Component {
 
   render() {
+    const mingifyText = mingify('React');
     return (
-      <ReactAccordion 
-        data={DATA} 
-        options={OPTIONS}
-        headerAttName="headerName"
-        itemsAttName="items" 
-        styles={styles}
-      />
+      <span>
+        <ReactAccordion 
+          data={DATA} 
+          options={OPTIONS}
+          headerAttName="headerName"
+          itemsAttName="items" 
+          styles={styles}
+        />
+        {mingifyText}
+      </span>
     );
   }
 }
