@@ -10,13 +10,13 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = require('./App');
+var _reactListviewStickyHeaderApp = require('./react-listview-sticky-header/app');
 
-var _App2 = _interopRequireDefault(_App);
+var _reactListviewStickyHeaderApp2 = _interopRequireDefault(_reactListviewStickyHeaderApp);
 
 var appRoot = document.createElement('div');
 appRoot.id = 'app';
 document.body.appendChild(appRoot);
 
-_reactDom2['default'].render(_react2['default'].createElement(_App2['default'], null), appRoot);
+_reactDom2['default'].render(_react2['default'].createElement(_reactListviewStickyHeaderApp2['default'], null), appRoot);
 //# sourceMappingURL=index.js.map
