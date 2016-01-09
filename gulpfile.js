@@ -13,7 +13,7 @@ var $ = require('gulp-load-plugins')({lazy: true});
 
 
 // Variables
-var version = '0.1.8';
+var version = '0.1.9';
 var gitCommit = `git commit -m ${version}`;
 var gitTag = `git tag v${version}`;
 
