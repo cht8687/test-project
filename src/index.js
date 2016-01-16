@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './mingify/Example';
+import App from './react-expandable-listview/App-expandable-listview';
 
 
 
