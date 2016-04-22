@@ -10,13 +10,13 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactTextCollapseReactTextCollapse = require('./react-text-collapse/react-text-collapse');
+var _reactHoverAppHover = require('./react-hover/App-hover');
 
-var _reactTextCollapseReactTextCollapse2 = _interopRequireDefault(_reactTextCollapseReactTextCollapse);
+var _reactHoverAppHover2 = _interopRequireDefault(_reactHoverAppHover);
 
 var appRoot = document.createElement('div');
 appRoot.id = 'app';
 document.body.appendChild(appRoot);
 
-_reactDom2['default'].render(_react2['default'].createElement(_reactTextCollapseReactTextCollapse2['default'], null), appRoot);
+_reactDom2['default'].render(_react2['default'].createElement(_reactHoverAppHover2['default'], null), appRoot);
 //# sourceMappingURL=index.js.map
