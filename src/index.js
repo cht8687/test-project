@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './react-hover/App-hover';
+import App from './cleave.js/app-cleave';
 
 
 const appRoot = document.createElement('div');
