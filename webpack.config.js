@@ -8,7 +8,6 @@ module.exports = {
   entry: [
     './src/index.js',
     './src/cleave.js/app.js',
-    './src/cleave.js/cleave.js',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server'
   ],

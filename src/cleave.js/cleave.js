@@ -25,7 +25,6 @@ var Cleave = function (element, opts) {
 Cleave.prototype = {
     init: function () {
         var owner = this, pps = owner.properties;
-
         // no need to use this lib
         if (!pps.numeral && !pps.phone && !pps.creditCard && !pps.date && (pps.blocksLength === 0 && !pps.prefix)) {
             return;
@@ -218,8 +217,14 @@ Cleave.prototype = {
 
     updateValueState: function () {
         var owner = this;
-
+        var oldLength = owner.element.value.length;
+        var oldIdx = owner.element.selectionStart;
         owner.element.value = owner.properties.result;
+        var newIdx = Math.max(0, owner.element.value.length - oldLength + oldIdx);
+        if (owner.properties.result[oldIdx] === owner.properties.prefix) {
+            newIdx++;
+        }
+        owner.element.selectionStart = owner.element.selectionEnd = newIdx;
     },
 
     setPhoneRegionCode: function (phoneRegionCode) {
