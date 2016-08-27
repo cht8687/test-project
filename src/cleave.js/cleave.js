@@ -1,3 +1,5 @@
+;(function(window, document) {
+
 'use strict';
 
 /**
@@ -25,6 +27,7 @@ var Cleave = function (element, opts) {
 Cleave.prototype = {
     init: function () {
         var owner = this, pps = owner.properties;
+
         // no need to use this lib
         if (!pps.numeral && !pps.phone && !pps.creditCard && !pps.date && (pps.blocksLength === 0 && !pps.prefix)) {
             return;
@@ -34,9 +37,14 @@ Cleave.prototype = {
 
         owner.onChangeListener = owner.onChange.bind(owner);
         owner.onKeyDownListener = owner.onKeyDown.bind(owner);
+        owner.onCutListener = owner.onCutOrCopy.bind(owner);
+        owner.onCopyListener = owner.onCutOrCopy.bind(owner);
 
         owner.element.addEventListener('input', owner.onChangeListener);
         owner.element.addEventListener('keydown', owner.onKeyDownListener);
+        owner.element.addEventListener('cut', owner.onCutListener);
+        owner.element.addEventListener('copy', owner.onCopyListener);
+
 
         owner.initPhoneFormatter();
         owner.initDateFormatter();
@@ -108,6 +116,23 @@ Cleave.prototype = {
 
     onChange: function () {
         this.onInput(this.element.value);
+    },
+
+    onCutOrCopy: function(e) {
+        var owner = this, 
+            pps = owner.properties,
+            Util = Cleave.Util,
+            inputValue = owner.element.value,
+            copyDelimiter = owner.properties.copyDelimiter,
+            textToCopy = '';
+
+        if (!copyDelimiter) {
+            textToCopy = Util.stripDelimiters(inputValue, pps.delimiter, pps.delimiters);   
+        } else {
+            textToCopy = inputValue;
+        }
+        e.clipboardData.setData('text/plain', textToCopy);
+        e.preventDefault(); 
     },
 
     onInput: function (value) {
@@ -217,14 +242,8 @@ Cleave.prototype = {
 
     updateValueState: function () {
         var owner = this;
-        var oldLength = owner.element.value.length;
-        var oldIdx = owner.element.selectionStart;
+
         owner.element.value = owner.properties.result;
-        var newIdx = Math.max(0, owner.element.value.length - oldLength + oldIdx);
-        if (owner.properties.result[oldIdx] === owner.properties.prefix) {
-            newIdx++;
-        }
-        owner.element.selectionStart = owner.element.selectionEnd = newIdx;
     },
 
     setPhoneRegionCode: function (phoneRegionCode) {
@@ -249,14 +268,22 @@ Cleave.prototype = {
     },
 
     getRawValue: function () {
-        var owner = this, pps = owner.properties,
-            inputValue = owner.element.value;
+        var owner = this,
+            pps = owner.properties,
+            Util = Cleave.Util,
+            rawValue = owner.element.value;
 
-        if (pps.numeral) {
-            return pps.numeralFormatter.getRawValue(inputValue);
+        if (pps.rawValueTrimPrefix) {
+            rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength);
         }
 
-        return Cleave.Util.stripDelimiters(inputValue, pps.delimiter, pps.delimiters);
+        if (pps.numeral) {
+            rawValue = pps.numeralFormatter.getRawValue(rawValue);
+        } else {
+            rawValue = Util.stripDelimiters(rawValue, pps.delimiter, pps.delimiters);
+        }
+
+        return rawValue;
     },
 
     getFormattedValue: function () {
@@ -268,12 +295,28 @@ Cleave.prototype = {
 
         owner.element.removeEventListener('input', owner.onChangeListener);
         owner.element.removeEventListener('keydown', owner.onKeyDownListener);
+        owner.element.removeEventListener('cut', owner.onCutListener);
+        owner.element.removeEventListener('copy', owner.onCopyListener);
     },
 
     toString: function () {
         return '[Cleave Object]';
     }
 };
+
+if (typeof module === 'object' && typeof module.exports === 'object') {
+    Cleave.NumeralFormatter = require('./shortcuts/NumeralFormatter');
+    Cleave.DateFormatter = require('./shortcuts/DateFormatter');
+    Cleave.PhoneFormatter = require('./shortcuts/PhoneFormatter');
+    Cleave.CreditCardDetector = require('./shortcuts/CreditCardDetector');
+    Cleave.Util = require('./utils/Util');
+    Cleave.DefaultProperties = require('./common/DefaultProperties');
+
+    // CommonJS
+    module.exports = exports = Cleave;
+}
+
+'use strict';
 
 var Util = {
     noop: function () {
@@ -422,6 +465,8 @@ var DefaultProperties = {
 
         target.prefix = (target.creditCard || target.phone || target.date) ? '' : (opts.prefix || '');
         target.prefixLength = target.prefix.length;
+        target.rawValueTrimPrefix = !!opts.rawValueTrimPrefix;
+        target.copyDelimiter = !!opts.copyDelimiter;
 
         target.initValue = opts.initValue || '';
 
@@ -815,4 +860,4 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
     window.Cleave = Cleave;
 }
 
-module.exports = Cleave;
+})(window, document);

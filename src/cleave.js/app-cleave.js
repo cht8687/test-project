@@ -22,7 +22,8 @@ class App extends Component {
     new Cleave('.input-4', {
         numeral: true,
         numeralDecimalMark: ',',
-        delimiter: '.'
+        delimiter: '.',
+        copyDelimiter: false,
     });
 
     new Cleave('.input-1', {
@@ -52,12 +53,26 @@ class App extends Component {
 
     new Cleave('.input-7', {
         prefix: 'APPLE',
-          uppercase: true,
+        uppercase: true,
         delimiter: '-',
         blocks: [4, 2, 3, 3]
     });
 
+    console.log(
+      new Cleave('.input-1', {
+        numeral: true,
+        prefix: '$',
+        rawValueTrimPrefix: false
+      }).getRawValue()
+    );
 
+    console.log(
+      new Cleave('.input-1', {
+        numeral: true,
+        prefix: '$',
+        rawValueTrimPrefix: true
+      }).getRawValue()
+    );
   }
 
   render() {
