@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './cleave.js/app-cleave';
+import App from './react-text-collapse/react-text-collapse';
 
 const appRoot = document.createElement('div');
 appRoot.id = 'app';

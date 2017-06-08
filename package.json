@@ -42,7 +42,7 @@
     "mingify": "0.0.2",
     "parallelshell": "^2.0.0",
     "react-hot-loader": "^1.2.9",
-    "react-text-collapse": "0.0.2",
+    "react-text-collapse": "0.1.0",
     "rimraf": "^2.4.3",
     "run-sequence": "^1.1.5",
     "style-loader": "^0.13.0",
