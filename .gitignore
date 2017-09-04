@@ -19,3 +19,6 @@ node_modules
 /example/
 .coveralls.yml
 /reports/
+
+/dist/
+package-lock.json
