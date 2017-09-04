@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import ReactTextCollapse from 'react-text-collapse'
@@ -13,7 +12,7 @@ const TEXT_COLLAPSE_OPTIONS = {
 
 class App extends Component {
 
-  render () {
+  render() {
     return (
       <div>
         <ReactTextCollapse

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var DATA = [{
+var DATA = exports.DATA = [{
   headerName: "Section 1",
   isOpened: true,
   items: [{
@@ -29,9 +29,7 @@ var DATA = [{
   }]
 }];
 
-exports.DATA = DATA;
-var OPTIONS = {
+var OPTIONS = exports.OPTIONS = {
   autoClapse: true
 };
-exports.OPTIONS = OPTIONS;
 //# sourceMappingURL=data.js.map

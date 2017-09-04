@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/redux/counter/src/index.js"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import ReactComponent from './ReactComponent';\nexport default ReactComponent;\n\n"]}

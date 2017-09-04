@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var DATA = [{
+var DATA = exports.DATA = [{
   headerName: "ListA",
   isOpened: true,
   items: [{
@@ -129,5 +129,4 @@ var DATA = [{
   }],
   height: 100
 }];
-exports.DATA = DATA;
 //# sourceMappingURL=const.js.map

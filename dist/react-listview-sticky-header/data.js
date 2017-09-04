@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var DATA = [{
+var DATA = exports.DATA = [{
   headerName: "ListA",
   items: [{
     title: "items1"
@@ -112,5 +112,4 @@ var DATA = [{
     title: "items3"
   }]
 }];
-exports.DATA = DATA;
 //# sourceMappingURL=data.js.map

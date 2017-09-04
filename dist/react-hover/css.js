@@ -1,9 +1,9 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var basic = {
+var basic = exports.basic = {
   trigger: {
     background: '#E0037E',
     width: '200px',
@@ -22,8 +22,7 @@ var basic = {
   }
 };
 
-exports.basic = basic;
-var advanced = {
+var advanced = exports.advanced = {
   trigger: {
     background: '#E0037E',
     width: '200px',
@@ -46,8 +45,7 @@ var advanced = {
   }
 };
 
-exports.advanced = advanced;
-var cursor = {
+var cursor = exports.cursor = {
   trigger: {
     background: '#E0037E',
     width: '200px',
@@ -64,5 +62,4 @@ var cursor = {
     position: 'absolute'
   }
 };
-exports.cursor = cursor;
 //# sourceMappingURL=css.js.map
