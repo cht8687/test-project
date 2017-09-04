@@ -7,48 +7,47 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     './src/index.js',
-    './src/cleave.js/app.js',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server'
   ],
-    output: {filename: 'bundle.js', path: path.resolve('src')},
-    plugins: [
-      new HtmlWebpackPlugin(),
-      new webpack.DefinePlugin({
-        'process.env': {
-         NODE_ENV: '"' + env + '"'
-        }
-      }),
-      new webpack.HotModuleReplacementPlugin()
-    ],
-    module: {
-      loaders: [
-        {
-          test: /\.js$/, 
-          loaders: ['react-hot', 'babel'],
-          include: [path.resolve('src')]
-        }, {
-          test: /\.css$/, // Only .css files
-          loader: 'style!css' // Run both loaders
-        }
-      ],
-      preLoaders: [
-        {
-          test: /\.js$/, 
-          loaders: ['eslint-loader'], 
-          include: [path.resolve('src')]
-        }
-      ]   
-    },
-    resolve: { extensions: ['', '.js'] },
-    stats: { colors: true },
-    eslint: { configFile: 'src/.eslintrc' },
-    devServer: {
-      hot: true,
-      historyApiFallback: true,
-      stats: {
-        chunkModules: false,
-        colors: true
+  output: { filename: 'bundle.js', path: path.resolve('src') },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"' + env + '"'
       }
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include: [path.resolve('src')]
+      }, {
+        test: /\.css$/, // Only .css files
+        loader: 'style!css' // Run both loaders
+      }
+    ],
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loaders: ['eslint-loader'],
+        include: [path.resolve('src')]
+      }
+    ]
+  },
+  resolve: { extensions: ['', '.js'] },
+  stats: { colors: true },
+  eslint: { configFile: 'src/.eslintrc' },
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+    stats: {
+      chunkModules: false,
+      colors: true
     }
+  }
 };
