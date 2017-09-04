@@ -21,9 +21,11 @@ var _reactTextCollapse = require('react-text-collapse');
 var _reactTextCollapse2 = _interopRequireDefault(_reactTextCollapse);
 
 var TEXT_COLLAPSE_OPTIONS = {
-  Collapse: false,
+  collapse: false,
   collapseText: '... show more',
-  expandText: 'show less'
+  expandText: 'show less',
+  minHeight: 70,
+  maxHeight: 180
 };
 
 var App = (function (_Component) {
@@ -38,7 +40,6 @@ var App = (function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-
       return _react2['default'].createElement(
         'div',
         null,

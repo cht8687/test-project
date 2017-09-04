@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dea0cd65ee032442bbc0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1c8c9363d55ae472e20c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -584,9 +584,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	__webpack_require__(181);
-	__webpack_require__(182);
-	module.exports = __webpack_require__(255);
+	__webpack_require__(183);
+	__webpack_require__(184);
+	module.exports = __webpack_require__(257);
 
 
 /***/ }),
@@ -607,17 +607,17 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _cleaveJsAppCleave = __webpack_require__(170);
+	var _reactTextCollapseReactTextCollapse = __webpack_require__(170);
 	
-	var _cleaveJsAppCleave2 = _interopRequireDefault(_cleaveJsAppCleave);
+	var _reactTextCollapseReactTextCollapse2 = _interopRequireDefault(_reactTextCollapseReactTextCollapse);
 	
 	var appRoot = document.createElement('div');
 	appRoot.id = 'app';
 	document.body.appendChild(appRoot);
 	
-	_reactDom2['default'].render(_react2['default'].createElement(_cleaveJsAppCleave2['default'], null), appRoot);
+	_reactDom2['default'].render(_react2['default'].createElement(_reactTextCollapseReactTextCollapse2['default'], null), appRoot);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(180); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ }),
@@ -20519,184 +20519,64 @@
 	
 	var _reactDom = __webpack_require__(169);
 	
-	var _cleave = __webpack_require__(171);
+	var _reactTextCollapse = __webpack_require__(171);
 	
-	var _cleave2 = _interopRequireDefault(_cleave);
+	var _reactTextCollapse2 = _interopRequireDefault(_reactTextCollapse);
+	
+	var TEXT_COLLAPSE_OPTIONS = {
+	  collapse: false,
+	  collapseText: '... show more',
+	  expandText: 'show less',
+	  minHeight: 70,
+	  maxHeight: 180
+	};
 	
 	var App = (function (_Component) {
-	    _inherits(App, _Component);
+	  _inherits(App, _Component);
 	
-	    function App() {
-	        _classCallCheck(this, App);
+	  function App() {
+	    _classCallCheck(this, App);
 	
-	        _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+	    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+	  }
+	
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        null,
+	        _react2['default'].createElement(
+	          _reactTextCollapse2['default'],
+	          {
+	            options: TEXT_COLLAPSE_OPTIONS
+	          },
+	          _react2['default'].createElement(
+	            'p',
+	            null,
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null),
+	            'React text collapse is awesome. React text collapse is awesome.',
+	            _react2['default'].createElement('br', null)
+	          )
+	        )
+	      );
 	    }
+	  }]);
 	
-	    _createClass(App, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            new _cleave2['default']('.input-0', {
-	                creditCard: true,
-	                onCreditCardTypeChanged: function onCreditCardTypeChanged(type) {
-	                    document.querySelector('.type').innerHTML = type;
-	                }
-	            });
-	
-	            new _cleave2['default']('.input-3', {
-	                date: true,
-	                datePattern: ['Y', 'm', 'd'],
-	                delimiter: '.'
-	            });
-	
-	            new _cleave2['default']('.input-4', {
-	                numeral: true,
-	                numeralDecimalMark: ',',
-	                delimiter: '.',
-	                copyDelimiter: false
-	            });
-	
-	            new _cleave2['default']('.input-1', {
-	                numeral: true,
-	                prefix: '$'
-	            });
-	
-	            new _cleave2['default']('.input-5', {
-	                uppercase: true,
-	                delimiters: ['.', '.', '-'],
-	                blocks: [3, 3, 3, 2]
-	            });
-	
-	            new _cleave2['default']('.input-6', {
-	                uppercase: true,
-	                delimiter: '',
-	                prefix: 'UFO',
-	                blocks: [3, 6] // or [9]
-	            });
-	
-	            new _cleave2['default']('.input-2', {
-	                numericOnly: true,
-	                delimiter: '.',
-	                prefix: 'BE',
-	                blocks: [5, 3, 3]
-	            });
-	
-	            new _cleave2['default']('.input-7', {
-	                prefix: 'APPLE',
-	                uppercase: true,
-	                delimiter: '-',
-	                blocks: [4, 2, 3, 3]
-	            });
-	
-	            console.log(new _cleave2['default']('.input-1', {
-	                numeral: true,
-	                prefix: '$',
-	                rawValueTrimPrefix: false
-	            }).getRawValue());
-	
-	            console.log(new _cleave2['default']('.input-1', {
-	                numeral: true,
-	                prefix: '$',
-	                rawValueTrimPrefix: true
-	            }).getRawValue());
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	
-	            return _react2['default'].createElement(
-	                'div',
-	                null,
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Credit card detector (',
-	                        _react2['default'].createElement(
-	                            'span',
-	                            { className: 'type' },
-	                            'unknown'
-	                        ),
-	                        '): '
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-0' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Date with "." as delimiter: '
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-3' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Numeral style like "1.234.567,89":'
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-4 right' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Numeral with "$" as prefix:'
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-1 right' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Use multiple delimiters:'
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-5' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Use empty delimiter:'
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-6' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'V.A.T Identification Number:'
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-2' })
-	                ),
-	                _react2['default'].createElement(
-	                    'section',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        'Prefix (can be modified):'
-	                    ),
-	                    _react2['default'].createElement('input', { className: 'input-7' })
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return App;
+	  return App;
 	})(_react.Component);
 	
 	var appRoot = document.createElement('div');
@@ -20705,973 +20585,977 @@
 	
 	(0, _reactDom.render)(_react2['default'].createElement(App, null), appRoot);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "app-cleave.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(180); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "react-text-collapse.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ }),
 /* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
 	'use strict';
 	
-	;(function (window, document) {
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-	    'use strict';
+	var _ReactTextCollapse = __webpack_require__(172);
 	
-	    /**
-	     * Construct a new Cleave instance by passing the configuration object
-	     *
-	     * @param {String / HTMLElement} element
-	     * @param {Object} opts
-	     */
-	    var Cleave = function Cleave(element, opts) {
-	        var owner = this;
+	var _ReactTextCollapse2 = _interopRequireDefault(_ReactTextCollapse);
 	
-	        if (typeof element === 'string') {
-	            owner.element = document.querySelector(element);
-	        } else {
-	            owner.element = typeof element.length !== 'undefined' && element.length > 0 ? element[0] : element;
-	        }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	        opts.initValue = owner.element.value;
-	
-	        owner.properties = Cleave.DefaultProperties.assign({}, opts);
-	
-	        owner.init();
-	    };
-	
-	    Cleave.prototype = {
-	        init: function init() {
-	            var owner = this,
-	                pps = owner.properties;
-	
-	            // no need to use this lib
-	            if (!pps.numeral && !pps.phone && !pps.creditCard && !pps.date && pps.blocksLength === 0 && !pps.prefix) {
-	                return;
-	            }
-	
-	            pps.maxLength = Cleave.Util.getMaxLength(pps.blocks);
-	
-	            owner.onChangeListener = owner.onChange.bind(owner);
-	            owner.onKeyDownListener = owner.onKeyDown.bind(owner);
-	            owner.onCutListener = owner.onCutOrCopy.bind(owner);
-	            owner.onCopyListener = owner.onCutOrCopy.bind(owner);
-	
-	            owner.element.addEventListener('input', owner.onChangeListener);
-	            owner.element.addEventListener('keydown', owner.onKeyDownListener);
-	            owner.element.addEventListener('cut', owner.onCutListener);
-	            owner.element.addEventListener('copy', owner.onCopyListener);
-	
-	            owner.initPhoneFormatter();
-	            owner.initDateFormatter();
-	            owner.initNumeralFormatter();
-	
-	            owner.onInput(pps.initValue);
-	        },
-	
-	        initNumeralFormatter: function initNumeralFormatter() {
-	            var owner = this,
-	                pps = owner.properties;
-	
-	            if (!pps.numeral) {
-	                return;
-	            }
-	
-	            pps.numeralFormatter = new Cleave.NumeralFormatter(pps.numeralDecimalMark, pps.numeralDecimalScale, pps.numeralThousandsGroupStyle, pps.delimiter);
-	        },
-	
-	        initDateFormatter: function initDateFormatter() {
-	            var owner = this,
-	                pps = owner.properties;
-	
-	            if (!pps.date) {
-	                return;
-	            }
-	
-	            pps.dateFormatter = new Cleave.DateFormatter(pps.datePattern);
-	            pps.blocks = pps.dateFormatter.getBlocks();
-	            pps.blocksLength = pps.blocks.length;
-	            pps.maxLength = Cleave.Util.getMaxLength(pps.blocks);
-	        },
-	
-	        initPhoneFormatter: function initPhoneFormatter() {
-	            var owner = this,
-	                pps = owner.properties;
-	
-	            if (!pps.phone) {
-	                return;
-	            }
-	
-	            // Cleave.AsYouTypeFormatter should be provided by
-	            // external google closure lib
-	            try {
-	                pps.phoneFormatter = new Cleave.PhoneFormatter(new window.Cleave.AsYouTypeFormatter(pps.phoneRegionCode), pps.delimiter);
-	            } catch (ex) {
-	                throw new Error('Please include phone-type-formatter.{country}.js lib');
-	            }
-	        },
-	
-	        onKeyDown: function onKeyDown(event) {
-	            var owner = this,
-	                pps = owner.properties,
-	                charCode = event.which || event.keyCode;
-	
-	            // hit backspace when last character is delimiter
-	            if (charCode === 8 && Cleave.Util.isDelimiter(owner.element.value.slice(-1), pps.delimiter, pps.delimiters)) {
-	                pps.backspace = true;
-	
-	                return;
-	            }
-	
-	            pps.backspace = false;
-	        },
-	
-	        onChange: function onChange() {
-	            this.onInput(this.element.value);
-	        },
-	
-	        onCutOrCopy: function onCutOrCopy(e) {
-	            var owner = this,
-	                pps = owner.properties,
-	                Util = Cleave.Util,
-	                inputValue = owner.element.value,
-	                copyDelimiter = owner.properties.copyDelimiter,
-	                textToCopy = '';
-	
-	            if (!copyDelimiter) {
-	                textToCopy = Util.stripDelimiters(inputValue, pps.delimiter, pps.delimiters);
-	            } else {
-	                textToCopy = inputValue;
-	            }
-	            e.clipboardData.setData('text/plain', textToCopy);
-	            e.preventDefault();
-	        },
-	
-	        onInput: function onInput(value) {
-	            var owner = this,
-	                pps = owner.properties,
-	                prev = value,
-	                Util = Cleave.Util;
-	
-	            // case 1: delete one more character "4"
-	            // 1234*| -> hit backspace -> 123|
-	            // case 2: last character is not delimiter which is:
-	            // 12|34* -> hit backspace -> 1|34*
-	            // note: no need to apply this for numeral mode
-	            if (!pps.numeral && pps.backspace && !Util.isDelimiter(value.slice(-1), pps.delimiter, pps.delimiters)) {
-	                value = Util.headStr(value, value.length - 1);
-	            }
-	
-	            // phone formatter
-	            if (pps.phone) {
-	                pps.result = pps.phoneFormatter.format(value);
-	                owner.updateValueState();
-	
-	                return;
-	            }
-	
-	            // numeral formatter
-	            if (pps.numeral) {
-	                pps.result = pps.prefix + pps.numeralFormatter.format(value);
-	                owner.updateValueState();
-	
-	                return;
-	            }
-	
-	            // date
-	            if (pps.date) {
-	                value = pps.dateFormatter.getValidatedDate(value);
-	            }
-	
-	            // strip delimiters
-	            value = Util.stripDelimiters(value, pps.delimiter, pps.delimiters);
-	
-	            // strip prefix
-	            value = Util.getPrefixStrippedValue(value, pps.prefix, pps.prefixLength);
-	
-	            // strip non-numeric characters
-	            value = pps.numericOnly ? Util.strip(value, /[^\d]/g) : value;
-	
-	            // convert case
-	            value = pps.uppercase ? value.toUpperCase() : value;
-	            value = pps.lowercase ? value.toLowerCase() : value;
-	
-	            // prefix
-	            if (pps.prefix) {
-	                value = pps.prefix + value;
-	
-	                // no blocks specified, no need to do formatting
-	                if (pps.blocksLength === 0) {
-	                    pps.result = value;
-	                    owner.updateValueState();
-	
-	                    return;
-	                }
-	            }
-	
-	            // update credit card props
-	            if (pps.creditCard) {
-	                owner.updateCreditCardPropsByValue(value);
-	            }
-	
-	            // strip over length characters
-	            value = Util.headStr(value, pps.maxLength);
-	
-	            // apply blocks
-	            pps.result = Util.getFormattedValue(value, pps.blocks, pps.blocksLength, pps.delimiter, pps.delimiters);
-	
-	            // nothing changed
-	            // prevent update value to avoid caret position change
-	            if (prev === pps.result && prev !== pps.prefix) {
-	                return;
-	            }
-	
-	            owner.updateValueState();
-	        },
-	
-	        updateCreditCardPropsByValue: function updateCreditCardPropsByValue(value) {
-	            var owner = this,
-	                pps = owner.properties,
-	                Util = Cleave.Util,
-	                creditCardInfo;
-	
-	            // At least one of the first 4 characters has changed
-	            if (Util.headStr(pps.result, 4) === Util.headStr(value, 4)) {
-	                return;
-	            }
-	
-	            creditCardInfo = Cleave.CreditCardDetector.getInfo(value, pps.creditCardStrictMode);
-	
-	            pps.blocks = creditCardInfo.blocks;
-	            pps.blocksLength = pps.blocks.length;
-	            pps.maxLength = Util.getMaxLength(pps.blocks);
-	
-	            // credit card type changed
-	            if (pps.creditCardType !== creditCardInfo.type) {
-	                pps.creditCardType = creditCardInfo.type;
-	
-	                pps.onCreditCardTypeChanged.call(owner, pps.creditCardType);
-	            }
-	        },
-	
-	        updateValueState: function updateValueState() {
-	            var owner = this;
-	
-	            owner.element.value = owner.properties.result;
-	        },
-	
-	        setPhoneRegionCode: function setPhoneRegionCode(phoneRegionCode) {
-	            var owner = this,
-	                pps = owner.properties;
-	
-	            pps.phoneRegionCode = phoneRegionCode;
-	            owner.initPhoneFormatter();
-	            owner.onChange();
-	        },
-	
-	        setRawValue: function setRawValue(value) {
-	            var owner = this,
-	                pps = owner.properties;
-	
-	            value = value.toString();
-	
-	            if (pps.numeral) {
-	                value = value.replace('.', pps.numeralDecimalMark);
-	            }
-	
-	            owner.element.value = value;
-	            owner.onInput(value);
-	        },
-	
-	        getRawValue: function getRawValue() {
-	            var owner = this,
-	                pps = owner.properties,
-	                Util = Cleave.Util,
-	                rawValue = owner.element.value;
-	
-	            if (pps.rawValueTrimPrefix) {
-	                rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength);
-	            }
-	
-	            if (pps.numeral) {
-	                rawValue = pps.numeralFormatter.getRawValue(rawValue);
-	            } else {
-	                rawValue = Util.stripDelimiters(rawValue, pps.delimiter, pps.delimiters);
-	            }
-	
-	            return rawValue;
-	        },
-	
-	        getFormattedValue: function getFormattedValue() {
-	            return this.element.value;
-	        },
-	
-	        destroy: function destroy() {
-	            var owner = this;
-	
-	            owner.element.removeEventListener('input', owner.onChangeListener);
-	            owner.element.removeEventListener('keydown', owner.onKeyDownListener);
-	            owner.element.removeEventListener('cut', owner.onCutListener);
-	            owner.element.removeEventListener('copy', owner.onCopyListener);
-	        },
-	
-	        toString: function toString() {
-	            return '[Cleave Object]';
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        Cleave.NumeralFormatter = __webpack_require__(172);
-	        Cleave.DateFormatter = __webpack_require__(176);
-	        Cleave.PhoneFormatter = __webpack_require__(177);
-	        Cleave.CreditCardDetector = __webpack_require__(178);
-	        Cleave.Util = __webpack_require__(179);
-	        Cleave.DefaultProperties = __webpack_require__(180);
-	
-	        // CommonJS
-	        module.exports = exports = Cleave;
-	    }
-	
-	    'use strict';
-	
-	    var Util = {
-	        noop: function noop() {},
-	
-	        strip: function strip(value, re) {
-	            return value.replace(re, '');
-	        },
-	
-	        isDelimiter: function isDelimiter(letter, delimiter, delimiters) {
-	            // single delimiter
-	            if (delimiters.length === 0) {
-	                return letter === delimiter;
-	            }
-	
-	            // multiple delimiters
-	            return delimiters.some(function (current) {
-	                if (letter === current) {
-	                    return true;
-	                }
-	            });
-	        },
-	
-	        stripDelimiters: function stripDelimiters(value, delimiter, delimiters) {
-	            // single delimiter
-	            if (delimiters.length === 0) {
-	                var delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
-	
-	                return value.replace(delimiterRE, '');
-	            }
-	
-	            // multiple delimiters
-	            delimiters.forEach(function (current) {
-	                value = value.replace(new RegExp('\\' + current, 'g'), '');
-	            });
-	
-	            return value;
-	        },
-	
-	        headStr: function headStr(str, length) {
-	            return str.slice(0, length);
-	        },
-	
-	        getMaxLength: function getMaxLength(blocks) {
-	            return blocks.reduce(function (previous, current) {
-	                return previous + current;
-	            }, 0);
-	        },
-	
-	        // strip value by prefix length
-	        // for prefix: PRE
-	        // (PRE123, 3) -> 123
-	        // (PR123, 3) -> 23 this happens when user hits backspace in front of "PRE"
-	        getPrefixStrippedValue: function getPrefixStrippedValue(value, prefix, prefixLength) {
-	            if (value.slice(0, prefixLength) !== prefix) {
-	                var diffIndex = this.getFirstDiffIndex(prefix, value.slice(0, prefixLength));
-	
-	                value = prefix + value.slice(diffIndex, diffIndex + 1) + value.slice(prefixLength + 1);
-	            }
-	
-	            return value.slice(prefixLength);
-	        },
-	
-	        getFirstDiffIndex: function getFirstDiffIndex(prev, current) {
-	            var index = 0;
-	
-	            while (prev.charAt(index) === current.charAt(index)) if (prev.charAt(index++) === '') return -1;
-	
-	            return index;
-	        },
-	
-	        getFormattedValue: function getFormattedValue(value, blocks, blocksLength, delimiter, delimiters) {
-	            var result = '',
-	                multipleDelimiters = delimiters.length > 0,
-	                currentDelimiter;
-	
-	            blocks.forEach(function (length, index) {
-	                if (value.length > 0) {
-	                    var sub = value.slice(0, length),
-	                        rest = value.slice(length);
-	
-	                    result += sub;
-	
-	                    currentDelimiter = multipleDelimiters ? delimiters[index] || currentDelimiter : delimiter;
-	
-	                    if (sub.length === length && index < blocksLength - 1) {
-	                        result += currentDelimiter;
-	                    }
-	
-	                    // update remaining string
-	                    value = rest;
-	                }
-	            });
-	
-	            return result;
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        module.exports = exports = Util;
-	    }
-	
-	    'use strict';
-	
-	    /**
-	     * Props Assignment
-	     *
-	     * Separate this, so react module can share the usage
-	     */
-	    var DefaultProperties = {
-	        // Maybe change to object-assign
-	        // for now just keep it as simple
-	        assign: function assign(target, opts) {
-	            target = target || {};
-	            opts = opts || {};
-	
-	            // credit card
-	            target.creditCard = !!opts.creditCard;
-	            target.creditCardStrictMode = !!opts.creditCardStrictMode;
-	            target.creditCardType = '';
-	            target.onCreditCardTypeChanged = opts.onCreditCardTypeChanged || function () {};
-	
-	            // phone
-	            target.phone = !!opts.phone;
-	            target.phoneRegionCode = opts.phoneRegionCode || 'AU';
-	            target.phoneFormatter = {};
-	
-	            // date
-	            target.date = !!opts.date;
-	            target.datePattern = opts.datePattern || ['d', 'm', 'Y'];
-	            target.dateFormatter = {};
-	
-	            // numeral
-	            target.numeral = !!opts.numeral;
-	            target.numeralDecimalScale = opts.numeralDecimalScale >= 0 ? opts.numeralDecimalScale : 2;
-	            target.numeralDecimalMark = opts.numeralDecimalMark || '.';
-	            target.numeralThousandsGroupStyle = opts.numeralThousandsGroupStyle || 'thousand';
-	
-	            // others
-	            target.numericOnly = target.creditCard || target.date || !!opts.numericOnly;
-	
-	            target.uppercase = !!opts.uppercase;
-	            target.lowercase = !!opts.lowercase;
-	
-	            target.prefix = target.creditCard || target.phone || target.date ? '' : opts.prefix || '';
-	            target.prefixLength = target.prefix.length;
-	            target.rawValueTrimPrefix = !!opts.rawValueTrimPrefix;
-	            target.copyDelimiter = !!opts.copyDelimiter;
-	
-	            target.initValue = opts.initValue || '';
-	
-	            target.delimiter = opts.delimiter || opts.delimiter === '' ? opts.delimiter : opts.date ? '/' : opts.numeral ? ',' : opts.phone ? ' ' : ' ';
-	            target.delimiters = opts.delimiters || [];
-	
-	            target.blocks = opts.blocks || [];
-	            target.blocksLength = target.blocks.length;
-	
-	            target.maxLength = 0;
-	
-	            target.backspace = false;
-	            target.result = '';
-	
-	            return target;
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        module.exports = exports = DefaultProperties;
-	    }
-	
-	    'use strict';
-	
-	    var CreditCardDetector = {
-	        blocks: {
-	            uatp: [4, 5, 6],
-	            amex: [4, 6, 5],
-	            diners: [4, 6, 4],
-	            discover: [4, 4, 4, 4],
-	            mastercard: [4, 4, 4, 4],
-	            dankort: [4, 4, 4, 4],
-	            instapayment: [4, 4, 4, 4],
-	            jcb: [4, 4, 4, 4],
-	            maestro: [4, 4, 4, 4],
-	            visa: [4, 4, 4, 4],
-	            generalLoose: [4, 4, 4, 4],
-	            generalStrict: [4, 4, 4, 7]
-	        },
-	
-	        re: {
-	            // starts with 1; 15 digits, not starts with 1800 (jcb card)
-	            uatp: /^(?!1800)1\d{0,14}/,
-	
-	            // starts with 34/37; 15 digits
-	            amex: /^3[47]\d{0,13}/,
-	
-	            // starts with 6011/65/644-649; 16 digits
-	            discover: /^(?:6011|65\d{0,2}|64[4-9]\d?)\d{0,12}/,
-	
-	            // starts with 300-305/309 or 36/38/39; 14 digits
-	            diners: /^3(?:0([0-5]|9)|[689]\d?)\d{0,11}/,
-	
-	            // starts with 51-55/22-27; 16 digits
-	            mastercard: /^(5[1-5]|2[2-7])\d{0,14}/,
-	
-	            // starts with 5019/4175/4571; 16 digits
-	            dankort: /^(5019|4175|4571)\d{0,12}/,
-	
-	            // starts with 637-639; 16 digits
-	            instapayment: /^63[7-9]\d{0,13}/,
-	
-	            // starts with 2131/1800/35; 16 digits
-	            jcb: /^(?:2131|1800|35\d{0,2})\d{0,12}/,
-	
-	            // starts with 50/56-58/6304/67; 16 digits
-	            maestro: /^(?:5[0678]\d{0,2}|6304|67\d{0,2})\d{0,12}/,
-	
-	            // starts with 4; 16 digits
-	            visa: /^4\d{0,15}/
-	        },
-	
-	        getInfo: function getInfo(value, strictMode) {
-	            var blocks = CreditCardDetector.blocks,
-	                re = CreditCardDetector.re;
-	
-	            // In theory, visa credit card can have up to 19 digits number.
-	            // Set strictMode to true will remove the 16 max-length restrain,
-	            // however, I never found any website validate card number like
-	            // this, hence probably you don't need to enable this option.
-	            strictMode = !!strictMode;
-	
-	            if (re.amex.test(value)) {
-	                return {
-	                    type: 'amex',
-	                    blocks: blocks.amex
-	                };
-	            } else if (re.uatp.test(value)) {
-	                return {
-	                    type: 'uatp',
-	                    blocks: blocks.uatp
-	                };
-	            } else if (re.diners.test(value)) {
-	                return {
-	                    type: 'diners',
-	                    blocks: blocks.diners
-	                };
-	            } else if (re.discover.test(value)) {
-	                return {
-	                    type: 'discover',
-	                    blocks: blocks.discover
-	                };
-	            } else if (re.mastercard.test(value)) {
-	                return {
-	                    type: 'mastercard',
-	                    blocks: blocks.mastercard
-	                };
-	            } else if (re.dankort.test(value)) {
-	                return {
-	                    type: 'dankort',
-	                    blocks: blocks.dankort
-	                };
-	            } else if (re.instapayment.test(value)) {
-	                return {
-	                    type: 'instapayment',
-	                    blocks: blocks.instapayment
-	                };
-	            } else if (re.jcb.test(value)) {
-	                return {
-	                    type: 'jcb',
-	                    blocks: blocks.jcb
-	                };
-	            } else if (re.maestro.test(value)) {
-	                return {
-	                    type: 'maestro',
-	                    blocks: blocks.maestro
-	                };
-	            } else if (re.visa.test(value)) {
-	                return {
-	                    type: 'visa',
-	                    blocks: blocks.visa
-	                };
-	            } else if (strictMode) {
-	                return {
-	                    type: 'unknown',
-	                    blocks: blocks.generalStrict
-	                };
-	            } else {
-	                return {
-	                    type: 'unknown',
-	                    blocks: blocks.generalLoose
-	                };
-	            }
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        module.exports = exports = CreditCardDetector;
-	    }
-	
-	    'use strict';
-	
-	    var DateFormatter = function DateFormatter(datePattern) {
-	        var owner = this;
-	
-	        owner.blocks = [];
-	        owner.datePattern = datePattern;
-	        owner.initBlocks();
-	    };
-	
-	    DateFormatter.prototype = {
-	        initBlocks: function initBlocks() {
-	            var owner = this;
-	            owner.datePattern.forEach(function (value) {
-	                if (value === 'Y') {
-	                    owner.blocks.push(4);
-	                } else {
-	                    owner.blocks.push(2);
-	                }
-	            });
-	        },
-	
-	        getBlocks: function getBlocks() {
-	            return this.blocks;
-	        },
-	
-	        getValidatedDate: function getValidatedDate(value) {
-	            var owner = this,
-	                result = '';
-	
-	            value = value.replace(/[^\d]/g, '');
-	
-	            owner.blocks.forEach(function (length, index) {
-	                if (value.length > 0) {
-	                    var sub = value.slice(0, length),
-	                        sub0 = sub.slice(0, 1),
-	                        rest = value.slice(length);
-	
-	                    switch (owner.datePattern[index]) {
-	                        case 'd':
-	                            if (sub === '00') {
-	                                sub = '01';
-	                            } else if (parseInt(sub0, 10) > 3) {
-	                                sub = '0' + sub0;
-	                            } else if (parseInt(sub, 10) > 31) {
-	                                sub = '31';
-	                            }
-	
-	                            break;
-	
-	                        case 'm':
-	                            if (sub === '00') {
-	                                sub = '01';
-	                            } else if (parseInt(sub0, 10) > 1) {
-	                                sub = '0' + sub0;
-	                            } else if (parseInt(sub, 10) > 12) {
-	                                sub = '12';
-	                            }
-	
-	                            break;
-	                    }
-	
-	                    result += sub;
-	
-	                    // update remaining string
-	                    value = rest;
-	                }
-	            });
-	
-	            return result;
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        module.exports = exports = DateFormatter;
-	    }
-	
-	    'use strict';
-	
-	    var NumeralFormatter = function NumeralFormatter(numeralDecimalMark, numeralDecimalScale, numeralThousandsGroupStyle, delimiter) {
-	        var owner = this;
-	
-	        owner.numeralDecimalMark = numeralDecimalMark || '.';
-	        owner.numeralDecimalScale = numeralDecimalScale >= 0 ? numeralDecimalScale : 2;
-	        owner.numeralThousandsGroupStyle = numeralThousandsGroupStyle || NumeralFormatter.groupStyle.thousand;
-	        owner.delimiter = delimiter || delimiter === '' ? delimiter : ',';
-	        owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
-	    };
-	
-	    NumeralFormatter.groupStyle = {
-	        thousand: 'thousand',
-	        lakh: 'lakh',
-	        wan: 'wan'
-	    };
-	
-	    NumeralFormatter.prototype = {
-	        getRawValue: function getRawValue(value) {
-	            return value.replace(this.delimiterRE, '').replace(this.numeralDecimalMark, '.');
-	        },
-	
-	        format: function format(value) {
-	            var owner = this,
-	                parts,
-	                partInteger,
-	                partDecimal = '';
-	
-	            // strip alphabet letters
-	            value = value.replace(/[A-Za-z]/g, '')
-	            // replace the first decimal mark with reserved placeholder
-	            .replace(owner.numeralDecimalMark, 'M')
-	
-	            // replace the first minus sign reserved placeholder
-	            .replace(/^\-/, 'N')
-	
-	            // strip the non numeric letters except the minus sign and decimal placeholder
-	            .replace(/[^\dMN]/g, '')
-	
-	            // replace the minus sign (if present)
-	            .replace('N', '-')
-	
-	            // replace decimal mark
-	            .replace('M', owner.numeralDecimalMark)
-	
-	            // strip any leading zeros
-	            .replace(/^(-)?0+(?=\d)/, '$1');
-	
-	            partInteger = value;
-	
-	            if (value.indexOf(owner.numeralDecimalMark) >= 0) {
-	                parts = value.split(owner.numeralDecimalMark);
-	                partInteger = parts[0];
-	                partDecimal = owner.numeralDecimalMark + parts[1].slice(0, owner.numeralDecimalScale);
-	            }
-	
-	            switch (owner.numeralThousandsGroupStyle) {
-	                case NumeralFormatter.groupStyle.lakh:
-	                    partInteger = partInteger.replace(/(\d)(?=(\d\d)+\d$)/g, '$1' + owner.delimiter);
-	
-	                    break;
-	
-	                case NumeralFormatter.groupStyle.wan:
-	                    partInteger = partInteger.replace(/(\d)(?=(\d{4})+$)/g, '$1' + owner.delimiter);
-	
-	                    break;
-	
-	                default:
-	                    partInteger = partInteger.replace(/(\d)(?=(\d{3})+$)/g, '$1' + owner.delimiter);
-	            }
-	
-	            return partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '');
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        module.exports = exports = NumeralFormatter;
-	    }
-	
-	    'use strict';
-	
-	    var PhoneFormatter = function PhoneFormatter(formatter, delimiter) {
-	        var owner = this;
-	
-	        owner.delimiter = delimiter || delimiter === '' ? delimiter : ' ';
-	        owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
-	
-	        owner.formatter = formatter;
-	    };
-	
-	    PhoneFormatter.prototype = {
-	        setFormatter: function setFormatter(formatter) {
-	            this.formatter = formatter;
-	        },
-	
-	        format: function format(phoneNumber) {
-	            var owner = this;
-	
-	            owner.formatter.clear();
-	
-	            // only keep number and +
-	            phoneNumber = phoneNumber.replace(/[^\d+]/g, '');
-	
-	            // strip delimiter
-	            phoneNumber = phoneNumber.replace(owner.delimiterRE, '');
-	
-	            var result = '',
-	                current,
-	                validated = false;
-	
-	            for (var i = 0, iMax = phoneNumber.length; i < iMax; i++) {
-	                current = owner.formatter.inputDigit(phoneNumber.charAt(i));
-	
-	                // has ()- or space inside
-	                if (/[\s()-]/g.test(current)) {
-	                    result = current;
-	
-	                    validated = true;
-	                } else {
-	                    if (!validated) {
-	                        result = current;
-	                    }
-	                    // else: over length input
-	                    // it turns to invalid number again
-	                }
-	            }
-	
-	            // strip ()
-	            // e.g. US: 7161234567 returns (716) 123-4567
-	            result = result.replace(/[()]/g, '');
-	            // replace library delimiter with user customized delimiter
-	            result = result.replace(/[\s-]/g, owner.delimiter);
-	
-	            return result;
-	        }
-	    };
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        module.exports = exports = PhoneFormatter;
-	    }
-	
-	    Cleave.NumeralFormatter = NumeralFormatter;
-	    Cleave.DateFormatter = DateFormatter;
-	    Cleave.PhoneFormatter = PhoneFormatter;
-	    Cleave.CreditCardDetector = CreditCardDetector;
-	    Cleave.Util = Util;
-	    Cleave.DefaultProperties = DefaultProperties;
-	
-	    if (typeof module === 'object' && typeof module.exports === 'object') {
-	        // CommonJS
-	        module.exports = exports = Cleave;
-	    } else if (true) {
-	        // AMD support
-	        !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-	            return Cleave;
-	        }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	    } else if (typeof window === 'object') {
-	        // Normal way
-	        window.Cleave = Cleave;
-	    }
-	})(window, document);
-	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "cleave.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
+	exports.default = _ReactTextCollapse2.default;
+	//# sourceMappingURL=index.js.map
 
 /***/ }),
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
 	'use strict';
 	
-	var NumeralFormatter = function NumeralFormatter(numeralDecimalMark, numeralDecimalScale, numeralThousandsGroupStyle, delimiter) {
-	    var owner = this;
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-	    owner.numeralDecimalMark = numeralDecimalMark || '.';
-	    owner.numeralDecimalScale = numeralDecimalScale >= 0 ? numeralDecimalScale : 2;
-	    owner.numeralThousandsGroupStyle = numeralThousandsGroupStyle || NumeralFormatter.groupStyle.thousand;
-	    owner.delimiter = delimiter || delimiter === '' ? delimiter : ',';
-	    owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
-	};
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	NumeralFormatter.groupStyle = {
-	    thousand: 'thousand',
-	    lakh: 'lakh',
-	    wan: 'wan'
-	};
+	var _react = __webpack_require__(65);
 	
-	NumeralFormatter.prototype = {
-	    getRawValue: function getRawValue(value) {
-	        return value.replace(this.delimiterRE, '').replace(this.numeralDecimalMark, '.');
-	    },
+	var _react2 = _interopRequireDefault(_react);
 	
-	    format: function format(value) {
-	        var owner = this,
-	            parts,
-	            partInteger,
-	            partDecimal = '';
+	var _reactMotion = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-motion\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
-	        // strip alphabet letters
-	        value = value.replace(/[A-Za-z]/g, '')
-	        // replace the first decimal mark with reserved placeholder
-	        .replace(owner.numeralDecimalMark, 'M')
+	var _propTypes = __webpack_require__(173);
 	
-	        // replace the first minus sign reserved placeholder
-	        .replace(/^\-/, 'N')
+	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	        // strip the non numeric letters except the minus sign and decimal placeholder
-	        .replace(/[^\dMN]/g, '')
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	        // replace the minus sign (if present)
-	        .replace('N', '-')
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	        // replace decimal mark
-	        .replace('M', owner.numeralDecimalMark)
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	        // strip any leading zeros
-	        .replace(/^(-)?0+(?=\d)/, '$1');
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	        partInteger = value;
+	var ReactTextCollapse = function (_Component) {
+	  _inherits(ReactTextCollapse, _Component);
 	
-	        if (value.indexOf(owner.numeralDecimalMark) >= 0) {
-	            parts = value.split(owner.numeralDecimalMark);
-	            partInteger = parts[0];
-	            partDecimal = owner.numeralDecimalMark + parts[1].slice(0, owner.numeralDecimalScale);
-	        }
+	  function ReactTextCollapse(props) {
+	    _classCallCheck(this, ReactTextCollapse);
 	
-	        switch (owner.numeralThousandsGroupStyle) {
-	            case NumeralFormatter.groupStyle.lakh:
-	                partInteger = partInteger.replace(/(\d)(?=(\d\d)+\d$)/g, '$1' + owner.delimiter);
+	    var _this = _possibleConstructorReturn(this, (ReactTextCollapse.__proto__ || Object.getPrototypeOf(ReactTextCollapse)).call(this, props));
 	
-	                break;
+	    var collapse = _this.props.options.collapse;
 	
-	            case NumeralFormatter.groupStyle.wan:
-	                partInteger = partInteger.replace(/(\d)(?=(\d{4})+$)/g, '$1' + owner.delimiter);
+	    _this.state = {
+	      collapse: collapse ? collapse : true
+	    };
+	    return _this;
+	  }
 	
-	                break;
+	  _createClass(ReactTextCollapse, [{
+	    key: 'renderHelperText',
+	    value: function renderHelperText() {
+	      var _props$options = this.props.options,
+	          collapseText = _props$options.collapseText,
+	          expandText = _props$options.expandText;
+	      var collapse = this.state.collapse;
 	
-	            default:
-	                partInteger = partInteger.replace(/(\d)(?=(\d{3})+$)/g, '$1' + owner.delimiter);
-	        }
-	
-	        return partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '');
+	      if (collapse) {
+	        return _react2.default.createElement(
+	          'div',
+	          { style: { float: 'left' } },
+	          collapseText
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          'div',
+	          { style: { float: 'left' } },
+	          expandText
+	        );
+	      }
 	    }
-	};
+	  }, {
+	    key: 'toggleAction',
+	    value: function toggleAction() {
+	      var collapse = this.state.collapse;
 	
-	if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = exports = NumeralFormatter;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "NumeralFormatter.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
+	      collapse = !collapse;
+	      this.setState({ collapse: collapse });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var children = this.props.children;
+	      var _props$options2 = this.props.options,
+	          minHeight = _props$options2.minHeight,
+	          maxHeight = _props$options2.maxHeight;
+	      var collapse = this.state.collapse;
+	
+	      return _react2.default.createElement(
+	        _reactMotion.Motion,
+	        {
+	          defaultStyle: { h: 0 },
+	          style: { h: (0, _reactMotion.spring)(collapse ? minHeight : maxHeight) } },
+	        function (_ref) {
+	          var h = _ref.h;
+	          return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              {
+	                style: {
+	                  display: 'block',
+	                  overflow: 'hidden',
+	                  height: '' + h + 'px'
+	                } },
+	              children
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { onClick: _this2.toggleAction.bind(_this2) },
+	              _this2.renderHelperText()
+	            )
+	          );
+	        }
+	      );
+	    }
+	  }]);
+	
+	  return ReactTextCollapse;
+	}(_react.Component);
+	
+	ReactTextCollapse.propTypes = {
+	  children: _propTypes2.default.node.isRequired,
+	  options: _propTypes2.default.object.isRequired
+	};
+	exports.default = ReactTextCollapse;
+	//# sourceMappingURL=ReactTextCollapse.js.map
 
 /***/ }),
 /* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
+	if (true) {
+	  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+	    Symbol.for &&
+	    Symbol.for('react.element')) ||
+	    0xeac7;
+	
+	  var isValidElement = function(object) {
+	    return typeof object === 'object' &&
+	      object !== null &&
+	      object.$$typeof === REACT_ELEMENT_TYPE;
+	  };
+	
+	  // By explicitly using `prop-types` you are opting into new development behavior.
+	  // http://fb.me/prop-types-in-prod
+	  var throwOnDirectAccess = true;
+	  module.exports = __webpack_require__(174)(isValidElement, throwOnDirectAccess);
+	} else {
+	  // By explicitly using `prop-types` you are opting into new production behavior.
+	  // http://fb.me/prop-types-in-prod
+	  module.exports = require('./factoryWithThrowingShims')();
+	}
+
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
 	'use strict';
 	
-	var isReactClassish = __webpack_require__(174),
-	    isReactElementish = __webpack_require__(175);
+	var emptyFunction = __webpack_require__(175);
+	var invariant = __webpack_require__(176);
+	var warning = __webpack_require__(177);
+	
+	var ReactPropTypesSecret = __webpack_require__(178);
+	var checkPropTypes = __webpack_require__(179);
+	
+	module.exports = function(isValidElement, throwOnDirectAccess) {
+	  /* global Symbol */
+	  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+	  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+	
+	  /**
+	   * Returns the iterator method function contained on the iterable object.
+	   *
+	   * Be sure to invoke the function with the iterable as context:
+	   *
+	   *     var iteratorFn = getIteratorFn(myIterable);
+	   *     if (iteratorFn) {
+	   *       var iterator = iteratorFn.call(myIterable);
+	   *       ...
+	   *     }
+	   *
+	   * @param {?object} maybeIterable
+	   * @return {?function}
+	   */
+	  function getIteratorFn(maybeIterable) {
+	    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+	    if (typeof iteratorFn === 'function') {
+	      return iteratorFn;
+	    }
+	  }
+	
+	  /**
+	   * Collection of methods that allow declaration and validation of props that are
+	   * supplied to React components. Example usage:
+	   *
+	   *   var Props = require('ReactPropTypes');
+	   *   var MyArticle = React.createClass({
+	   *     propTypes: {
+	   *       // An optional string prop named "description".
+	   *       description: Props.string,
+	   *
+	   *       // A required enum prop named "category".
+	   *       category: Props.oneOf(['News','Photos']).isRequired,
+	   *
+	   *       // A prop named "dialog" that requires an instance of Dialog.
+	   *       dialog: Props.instanceOf(Dialog).isRequired
+	   *     },
+	   *     render: function() { ... }
+	   *   });
+	   *
+	   * A more formal specification of how these methods are used:
+	   *
+	   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+	   *   decl := ReactPropTypes.{type}(.isRequired)?
+	   *
+	   * Each and every declaration produces a function with the same signature. This
+	   * allows the creation of custom validation functions. For example:
+	   *
+	   *  var MyLink = React.createClass({
+	   *    propTypes: {
+	   *      // An optional string or URI prop named "href".
+	   *      href: function(props, propName, componentName) {
+	   *        var propValue = props[propName];
+	   *        if (propValue != null && typeof propValue !== 'string' &&
+	   *            !(propValue instanceof URI)) {
+	   *          return new Error(
+	   *            'Expected a string or an URI for ' + propName + ' in ' +
+	   *            componentName
+	   *          );
+	   *        }
+	   *      }
+	   *    },
+	   *    render: function() {...}
+	   *  });
+	   *
+	   * @internal
+	   */
+	
+	  var ANONYMOUS = '<<anonymous>>';
+	
+	  // Important!
+	  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+	  var ReactPropTypes = {
+	    array: createPrimitiveTypeChecker('array'),
+	    bool: createPrimitiveTypeChecker('boolean'),
+	    func: createPrimitiveTypeChecker('function'),
+	    number: createPrimitiveTypeChecker('number'),
+	    object: createPrimitiveTypeChecker('object'),
+	    string: createPrimitiveTypeChecker('string'),
+	    symbol: createPrimitiveTypeChecker('symbol'),
+	
+	    any: createAnyTypeChecker(),
+	    arrayOf: createArrayOfTypeChecker,
+	    element: createElementTypeChecker(),
+	    instanceOf: createInstanceTypeChecker,
+	    node: createNodeChecker(),
+	    objectOf: createObjectOfTypeChecker,
+	    oneOf: createEnumTypeChecker,
+	    oneOfType: createUnionTypeChecker,
+	    shape: createShapeTypeChecker
+	  };
+	
+	  /**
+	   * inlined Object.is polyfill to avoid requiring consumers ship their own
+	   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+	   */
+	  /*eslint-disable no-self-compare*/
+	  function is(x, y) {
+	    // SameValue algorithm
+	    if (x === y) {
+	      // Steps 1-5, 7-10
+	      // Steps 6.b-6.e: +0 != -0
+	      return x !== 0 || 1 / x === 1 / y;
+	    } else {
+	      // Step 6.a: NaN == NaN
+	      return x !== x && y !== y;
+	    }
+	  }
+	  /*eslint-enable no-self-compare*/
+	
+	  /**
+	   * We use an Error-like object for backward compatibility as people may call
+	   * PropTypes directly and inspect their output. However, we don't use real
+	   * Errors anymore. We don't inspect their stack anyway, and creating them
+	   * is prohibitively expensive if they are created too often, such as what
+	   * happens in oneOfType() for any type before the one that matched.
+	   */
+	  function PropTypeError(message) {
+	    this.message = message;
+	    this.stack = '';
+	  }
+	  // Make `instanceof Error` still work for returned errors.
+	  PropTypeError.prototype = Error.prototype;
+	
+	  function createChainableTypeChecker(validate) {
+	    if (true) {
+	      var manualPropTypeCallCache = {};
+	      var manualPropTypeWarningCount = 0;
+	    }
+	    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+	      componentName = componentName || ANONYMOUS;
+	      propFullName = propFullName || propName;
+	
+	      if (secret !== ReactPropTypesSecret) {
+	        if (throwOnDirectAccess) {
+	          // New behavior only for users of `prop-types` package
+	          invariant(
+	            false,
+	            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+	            'Use `PropTypes.checkPropTypes()` to call them. ' +
+	            'Read more at http://fb.me/use-check-prop-types'
+	          );
+	        } else if (("development") !== 'production' && typeof console !== 'undefined') {
+	          // Old behavior for people using React.PropTypes
+	          var cacheKey = componentName + ':' + propName;
+	          if (
+	            !manualPropTypeCallCache[cacheKey] &&
+	            // Avoid spamming the console because they are often not actionable except for lib authors
+	            manualPropTypeWarningCount < 3
+	          ) {
+	            warning(
+	              false,
+	              'You are manually calling a React.PropTypes validation ' +
+	              'function for the `%s` prop on `%s`. This is deprecated ' +
+	              'and will throw in the standalone `prop-types` package. ' +
+	              'You may be seeing this warning due to a third-party PropTypes ' +
+	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
+	              propFullName,
+	              componentName
+	            );
+	            manualPropTypeCallCache[cacheKey] = true;
+	            manualPropTypeWarningCount++;
+	          }
+	        }
+	      }
+	      if (props[propName] == null) {
+	        if (isRequired) {
+	          if (props[propName] === null) {
+	            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+	          }
+	          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+	        }
+	        return null;
+	      } else {
+	        return validate(props, propName, componentName, location, propFullName);
+	      }
+	    }
+	
+	    var chainedCheckType = checkType.bind(null, false);
+	    chainedCheckType.isRequired = checkType.bind(null, true);
+	
+	    return chainedCheckType;
+	  }
+	
+	  function createPrimitiveTypeChecker(expectedType) {
+	    function validate(props, propName, componentName, location, propFullName, secret) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== expectedType) {
+	        // `propValue` being instance of, say, date/regexp, pass the 'object'
+	        // check, but we can offer a more precise error message here rather than
+	        // 'of type `object`'.
+	        var preciseType = getPreciseType(propValue);
+	
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createAnyTypeChecker() {
+	    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
+	  }
+	
+	  function createArrayOfTypeChecker(typeChecker) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (typeof typeChecker !== 'function') {
+	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+	      }
+	      var propValue = props[propName];
+	      if (!Array.isArray(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+	      }
+	      for (var i = 0; i < propValue.length; i++) {
+	        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+	        if (error instanceof Error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createElementTypeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      if (!isValidElement(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createInstanceTypeChecker(expectedClass) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (!(props[propName] instanceof expectedClass)) {
+	        var expectedClassName = expectedClass.name || ANONYMOUS;
+	        var actualClassName = getClassName(props[propName]);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createEnumTypeChecker(expectedValues) {
+	    if (!Array.isArray(expectedValues)) {
+	       true ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+	      return emptyFunction.thatReturnsNull;
+	    }
+	
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      for (var i = 0; i < expectedValues.length; i++) {
+	        if (is(propValue, expectedValues[i])) {
+	          return null;
+	        }
+	      }
+	
+	      var valuesString = JSON.stringify(expectedValues);
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createObjectOfTypeChecker(typeChecker) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (typeof typeChecker !== 'function') {
+	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+	      }
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+	      }
+	      for (var key in propValue) {
+	        if (propValue.hasOwnProperty(key)) {
+	          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	          if (error instanceof Error) {
+	            return error;
+	          }
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createUnionTypeChecker(arrayOfTypeCheckers) {
+	    if (!Array.isArray(arrayOfTypeCheckers)) {
+	       true ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+	      return emptyFunction.thatReturnsNull;
+	    }
+	
+	    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+	      var checker = arrayOfTypeCheckers[i];
+	      if (typeof checker !== 'function') {
+	        warning(
+	          false,
+	          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+	          'received %s at index %s.',
+	          getPostfixForTypeWarning(checker),
+	          i
+	        );
+	        return emptyFunction.thatReturnsNull;
+	      }
+	    }
+	
+	    function validate(props, propName, componentName, location, propFullName) {
+	      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+	        var checker = arrayOfTypeCheckers[i];
+	        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+	          return null;
+	        }
+	      }
+	
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createNodeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (!isNode(props[propName])) {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function createShapeTypeChecker(shapeTypes) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+	      }
+	      for (var key in shapeTypes) {
+	        var checker = shapeTypes[key];
+	        if (!checker) {
+	          continue;
+	        }
+	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	        if (error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+	
+	  function isNode(propValue) {
+	    switch (typeof propValue) {
+	      case 'number':
+	      case 'string':
+	      case 'undefined':
+	        return true;
+	      case 'boolean':
+	        return !propValue;
+	      case 'object':
+	        if (Array.isArray(propValue)) {
+	          return propValue.every(isNode);
+	        }
+	        if (propValue === null || isValidElement(propValue)) {
+	          return true;
+	        }
+	
+	        var iteratorFn = getIteratorFn(propValue);
+	        if (iteratorFn) {
+	          var iterator = iteratorFn.call(propValue);
+	          var step;
+	          if (iteratorFn !== propValue.entries) {
+	            while (!(step = iterator.next()).done) {
+	              if (!isNode(step.value)) {
+	                return false;
+	              }
+	            }
+	          } else {
+	            // Iterator will provide entry [k,v] tuples rather than values.
+	            while (!(step = iterator.next()).done) {
+	              var entry = step.value;
+	              if (entry) {
+	                if (!isNode(entry[1])) {
+	                  return false;
+	                }
+	              }
+	            }
+	          }
+	        } else {
+	          return false;
+	        }
+	
+	        return true;
+	      default:
+	        return false;
+	    }
+	  }
+	
+	  function isSymbol(propType, propValue) {
+	    // Native Symbol.
+	    if (propType === 'symbol') {
+	      return true;
+	    }
+	
+	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+	    if (propValue['@@toStringTag'] === 'Symbol') {
+	      return true;
+	    }
+	
+	    // Fallback for non-spec compliant Symbols which are polyfilled.
+	    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+	      return true;
+	    }
+	
+	    return false;
+	  }
+	
+	  // Equivalent of `typeof` but with special handling for array and regexp.
+	  function getPropType(propValue) {
+	    var propType = typeof propValue;
+	    if (Array.isArray(propValue)) {
+	      return 'array';
+	    }
+	    if (propValue instanceof RegExp) {
+	      // Old webkits (at least until Android 4.0) return 'function' rather than
+	      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+	      // passes PropTypes.object.
+	      return 'object';
+	    }
+	    if (isSymbol(propType, propValue)) {
+	      return 'symbol';
+	    }
+	    return propType;
+	  }
+	
+	  // This handles more types than `getPropType`. Only used for error messages.
+	  // See `createPrimitiveTypeChecker`.
+	  function getPreciseType(propValue) {
+	    if (typeof propValue === 'undefined' || propValue === null) {
+	      return '' + propValue;
+	    }
+	    var propType = getPropType(propValue);
+	    if (propType === 'object') {
+	      if (propValue instanceof Date) {
+	        return 'date';
+	      } else if (propValue instanceof RegExp) {
+	        return 'regexp';
+	      }
+	    }
+	    return propType;
+	  }
+	
+	  // Returns a string that is postfixed to a warning about an invalid type.
+	  // For example, "undefined" or "of type array"
+	  function getPostfixForTypeWarning(value) {
+	    var type = getPreciseType(value);
+	    switch (type) {
+	      case 'array':
+	      case 'object':
+	        return 'an ' + type;
+	      case 'boolean':
+	      case 'date':
+	      case 'regexp':
+	        return 'a ' + type;
+	      default:
+	        return type;
+	    }
+	  }
+	
+	  // Returns class name of the object, if any.
+	  function getClassName(propValue) {
+	    if (!propValue.constructor || !propValue.constructor.name) {
+	      return ANONYMOUS;
+	    }
+	    return propValue.constructor.name;
+	  }
+	
+	  ReactPropTypes.checkPropTypes = checkPropTypes;
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+	
+	  return ReactPropTypes;
+	};
+
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * 
+	 */
+	
+	function makeEmptyFunction(arg) {
+	  return function () {
+	    return arg;
+	  };
+	}
+	
+	/**
+	 * This function accepts and discards inputs; it has no side effects. This is
+	 * primarily useful idiomatically for overridable function endpoints which
+	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+	 */
+	var emptyFunction = function emptyFunction() {};
+	
+	emptyFunction.thatReturns = makeEmptyFunction;
+	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+	emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+	emptyFunction.thatReturnsThis = function () {
+	  return this;
+	};
+	emptyFunction.thatReturnsArgument = function (arg) {
+	  return arg;
+	};
+	
+	module.exports = emptyFunction;
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+	
+	'use strict';
+	
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+	
+	var validateFormat = function validateFormat(format) {};
+	
+	if (true) {
+	  validateFormat = function validateFormat(format) {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  };
+	}
+	
+	function invariant(condition, format, a, b, c, d, e, f) {
+	  validateFormat(format);
+	
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error(format.replace(/%s/g, function () {
+	        return args[argIndex++];
+	      }));
+	      error.name = 'Invariant Violation';
+	    }
+	
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	}
+	
+	module.exports = invariant;
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2014-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+	
+	'use strict';
+	
+	var emptyFunction = __webpack_require__(175);
+	
+	/**
+	 * Similar to invariant but only logs a warning if the condition is not met.
+	 * This can be used to log issues in development environments in critical
+	 * paths. Removing the logging code for production environments will keep the
+	 * same logic and follow the same code paths.
+	 */
+	
+	var warning = emptyFunction;
+	
+	if (true) {
+	  var printWarning = function printWarning(format) {
+	    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      args[_key - 1] = arguments[_key];
+	    }
+	
+	    var argIndex = 0;
+	    var message = 'Warning: ' + format.replace(/%s/g, function () {
+	      return args[argIndex++];
+	    });
+	    if (typeof console !== 'undefined') {
+	      console.error(message);
+	    }
+	    try {
+	      // --- Welcome to debugging React ---
+	      // This error was thrown as a convenience so that you can use this stack
+	      // to find the callsite that caused this warning to fire.
+	      throw new Error(message);
+	    } catch (x) {}
+	  };
+	
+	  warning = function warning(condition, format) {
+	    if (format === undefined) {
+	      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+	    }
+	
+	    if (format.indexOf('Failed Composite propType: ') === 0) {
+	      return; // Ignore CompositeComponent proptype check.
+	    }
+	
+	    if (!condition) {
+	      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+	        args[_key2 - 2] = arguments[_key2];
+	      }
+	
+	      printWarning.apply(undefined, [format].concat(args));
+	    }
+	  };
+	}
+	
+	module.exports = warning;
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
+	'use strict';
+	
+	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+	
+	module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
+	'use strict';
+	
+	if (true) {
+	  var invariant = __webpack_require__(176);
+	  var warning = __webpack_require__(177);
+	  var ReactPropTypesSecret = __webpack_require__(178);
+	  var loggedTypeFailures = {};
+	}
+	
+	/**
+	 * Assert that the values match with the type specs.
+	 * Error messages are memorized and will only be shown once.
+	 *
+	 * @param {object} typeSpecs Map of name to a ReactPropType
+	 * @param {object} values Runtime values that need to be type-checked
+	 * @param {string} location e.g. "prop", "context", "child context"
+	 * @param {string} componentName Name of the component for error messages.
+	 * @param {?Function} getStack Returns the component stack.
+	 * @private
+	 */
+	function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+	  if (true) {
+	    for (var typeSpecName in typeSpecs) {
+	      if (typeSpecs.hasOwnProperty(typeSpecName)) {
+	        var error;
+	        // Prop type validation may throw. In case they do, we don't want to
+	        // fail the render phase where it didn't fail before. So we log it.
+	        // After these have been cleaned up, we'll let them throw.
+	        try {
+	          // This is intentionally an invariant that gets caught. It's the same
+	          // behavior as without this statement except with a better message.
+	          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
+	          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+	        } catch (ex) {
+	          error = ex;
+	        }
+	        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
+	        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+	          // Only monitor this failure once because there tends to be a lot of the
+	          // same error.
+	          loggedTypeFailures[error.message] = true;
+	
+	          var stack = getStack ? getStack() : '';
+	
+	          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
+	        }
+	      }
+	    }
+	  }
+	}
+	
+	module.exports = checkPropTypes;
+
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var isReactClassish = __webpack_require__(181),
+	    isReactElementish = __webpack_require__(182);
 	
 	function makeExportsHot(m, React) {
 	  if (isReactElementish(m.exports, React)) {
@@ -21725,7 +21609,7 @@
 
 
 /***/ }),
-/* 174 */
+/* 181 */
 /***/ (function(module, exports) {
 
 	function hasRender(Class) {
@@ -21775,10 +21659,10 @@
 	module.exports = isReactClassish;
 
 /***/ }),
-/* 175 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isReactClassish = __webpack_require__(174);
+	var isReactClassish = __webpack_require__(181);
 	
 	function isReactElementish(obj, React) {
 	  if (!obj) {
@@ -21792,487 +21676,7 @@
 	module.exports = isReactElementish;
 
 /***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	var DateFormatter = function DateFormatter(datePattern) {
-	    var owner = this;
-	
-	    owner.blocks = [];
-	    owner.datePattern = datePattern;
-	    owner.initBlocks();
-	};
-	
-	DateFormatter.prototype = {
-	    initBlocks: function initBlocks() {
-	        var owner = this;
-	        owner.datePattern.forEach(function (value) {
-	            if (value === 'Y') {
-	                owner.blocks.push(4);
-	            } else {
-	                owner.blocks.push(2);
-	            }
-	        });
-	    },
-	
-	    getBlocks: function getBlocks() {
-	        return this.blocks;
-	    },
-	
-	    getValidatedDate: function getValidatedDate(value) {
-	        var owner = this,
-	            result = '';
-	
-	        value = value.replace(/[^\d]/g, '');
-	
-	        owner.blocks.forEach(function (length, index) {
-	            if (value.length > 0) {
-	                var sub = value.slice(0, length),
-	                    sub0 = sub.slice(0, 1),
-	                    rest = value.slice(length);
-	
-	                switch (owner.datePattern[index]) {
-	                    case 'd':
-	                        if (sub === '00') {
-	                            sub = '01';
-	                        } else if (parseInt(sub0, 10) > 3) {
-	                            sub = '0' + sub0;
-	                        } else if (parseInt(sub, 10) > 31) {
-	                            sub = '31';
-	                        }
-	
-	                        break;
-	
-	                    case 'm':
-	                        if (sub === '00') {
-	                            sub = '01';
-	                        } else if (parseInt(sub0, 10) > 1) {
-	                            sub = '0' + sub0;
-	                        } else if (parseInt(sub, 10) > 12) {
-	                            sub = '12';
-	                        }
-	
-	                        break;
-	                }
-	
-	                result += sub;
-	
-	                // update remaining string
-	                value = rest;
-	            }
-	        });
-	
-	        return result;
-	    }
-	};
-	
-	if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = exports = DateFormatter;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "DateFormatter.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
-
-/***/ }),
-/* 177 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	var PhoneFormatter = function PhoneFormatter(formatter, delimiter) {
-	    var owner = this;
-	
-	    owner.delimiter = delimiter || delimiter === '' ? delimiter : ' ';
-	    owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
-	
-	    owner.formatter = formatter;
-	};
-	
-	PhoneFormatter.prototype = {
-	    setFormatter: function setFormatter(formatter) {
-	        this.formatter = formatter;
-	    },
-	
-	    format: function format(phoneNumber) {
-	        var owner = this;
-	
-	        owner.formatter.clear();
-	
-	        // only keep number and +
-	        phoneNumber = phoneNumber.replace(/[^\d+]/g, '');
-	
-	        // strip delimiter
-	        phoneNumber = phoneNumber.replace(owner.delimiterRE, '');
-	
-	        var result = '',
-	            current,
-	            validated = false;
-	
-	        for (var i = 0, iMax = phoneNumber.length; i < iMax; i++) {
-	            current = owner.formatter.inputDigit(phoneNumber.charAt(i));
-	
-	            // has ()- or space inside
-	            if (/[\s()-]/g.test(current)) {
-	                result = current;
-	
-	                validated = true;
-	            } else {
-	                if (!validated) {
-	                    result = current;
-	                }
-	                // else: over length input
-	                // it turns to invalid number again
-	            }
-	        }
-	
-	        // strip ()
-	        // e.g. US: 7161234567 returns (716) 123-4567
-	        result = result.replace(/[()]/g, '');
-	        // replace library delimiter with user customized delimiter
-	        result = result.replace(/[\s-]/g, owner.delimiter);
-	
-	        return result;
-	    }
-	};
-	
-	if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = exports = PhoneFormatter;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "PhoneFormatter.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
-
-/***/ }),
-/* 178 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	var CreditCardDetector = {
-	    blocks: {
-	        uatp: [4, 5, 6],
-	        amex: [4, 6, 5],
-	        diners: [4, 6, 4],
-	        discover: [4, 4, 4, 4],
-	        mastercard: [4, 4, 4, 4],
-	        dankort: [4, 4, 4, 4],
-	        instapayment: [4, 4, 4, 4],
-	        jcb: [4, 4, 4, 4],
-	        maestro: [4, 4, 4, 4],
-	        visa: [4, 4, 4, 4],
-	        generalLoose: [4, 4, 4, 4],
-	        generalStrict: [4, 4, 4, 7]
-	    },
-	
-	    re: {
-	        // starts with 1; 15 digits, not starts with 1800 (jcb card)
-	        uatp: /^(?!1800)1\d{0,14}/,
-	
-	        // starts with 34/37; 15 digits
-	        amex: /^3[47]\d{0,13}/,
-	
-	        // starts with 6011/65/644-649; 16 digits
-	        discover: /^(?:6011|65\d{0,2}|64[4-9]\d?)\d{0,12}/,
-	
-	        // starts with 300-305/309 or 36/38/39; 14 digits
-	        diners: /^3(?:0([0-5]|9)|[689]\d?)\d{0,11}/,
-	
-	        // starts with 51-55/22-27; 16 digits
-	        mastercard: /^(5[1-5]|2[2-7])\d{0,14}/,
-	
-	        // starts with 5019/4175/4571; 16 digits
-	        dankort: /^(5019|4175|4571)\d{0,12}/,
-	
-	        // starts with 637-639; 16 digits
-	        instapayment: /^63[7-9]\d{0,13}/,
-	
-	        // starts with 2131/1800/35; 16 digits
-	        jcb: /^(?:2131|1800|35\d{0,2})\d{0,12}/,
-	
-	        // starts with 50/56-58/6304/67; 16 digits
-	        maestro: /^(?:5[0678]\d{0,2}|6304|67\d{0,2})\d{0,12}/,
-	
-	        // starts with 4; 16 digits
-	        visa: /^4\d{0,15}/
-	    },
-	
-	    getInfo: function getInfo(value, strictMode) {
-	        var blocks = CreditCardDetector.blocks,
-	            re = CreditCardDetector.re;
-	
-	        // In theory, visa credit card can have up to 19 digits number.
-	        // Set strictMode to true will remove the 16 max-length restrain,
-	        // however, I never found any website validate card number like
-	        // this, hence probably you don't need to enable this option.
-	        strictMode = !!strictMode;
-	
-	        if (re.amex.test(value)) {
-	            return {
-	                type: 'amex',
-	                blocks: blocks.amex
-	            };
-	        } else if (re.uatp.test(value)) {
-	            return {
-	                type: 'uatp',
-	                blocks: blocks.uatp
-	            };
-	        } else if (re.diners.test(value)) {
-	            return {
-	                type: 'diners',
-	                blocks: blocks.diners
-	            };
-	        } else if (re.discover.test(value)) {
-	            return {
-	                type: 'discover',
-	                blocks: blocks.discover
-	            };
-	        } else if (re.mastercard.test(value)) {
-	            return {
-	                type: 'mastercard',
-	                blocks: blocks.mastercard
-	            };
-	        } else if (re.dankort.test(value)) {
-	            return {
-	                type: 'dankort',
-	                blocks: blocks.dankort
-	            };
-	        } else if (re.instapayment.test(value)) {
-	            return {
-	                type: 'instapayment',
-	                blocks: blocks.instapayment
-	            };
-	        } else if (re.jcb.test(value)) {
-	            return {
-	                type: 'jcb',
-	                blocks: blocks.jcb
-	            };
-	        } else if (re.maestro.test(value)) {
-	            return {
-	                type: 'maestro',
-	                blocks: blocks.maestro
-	            };
-	        } else if (re.visa.test(value)) {
-	            return {
-	                type: 'visa',
-	                blocks: blocks.visa
-	            };
-	        } else if (strictMode) {
-	            return {
-	                type: 'unknown',
-	                blocks: blocks.generalStrict
-	            };
-	        } else {
-	            return {
-	                type: 'unknown',
-	                blocks: blocks.generalLoose
-	            };
-	        }
-	    }
-	};
-	
-	if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = exports = CreditCardDetector;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "CreditCardDetector.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
-
-/***/ }),
-/* 179 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	var Util = {
-	    noop: function noop() {},
-	
-	    strip: function strip(value, re) {
-	        return value.replace(re, '');
-	    },
-	
-	    isDelimiter: function isDelimiter(letter, delimiter, delimiters) {
-	        // single delimiter
-	        if (delimiters.length === 0) {
-	            return letter === delimiter;
-	        }
-	
-	        // multiple delimiters
-	        return delimiters.some(function (current) {
-	            if (letter === current) {
-	                return true;
-	            }
-	        });
-	    },
-	
-	    stripDelimiters: function stripDelimiters(value, delimiter, delimiters) {
-	        // single delimiter
-	        if (delimiters.length === 0) {
-	            var delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
-	
-	            return value.replace(delimiterRE, '');
-	        }
-	
-	        // multiple delimiters
-	        delimiters.forEach(function (current) {
-	            value = value.replace(new RegExp('\\' + current, 'g'), '');
-	        });
-	
-	        return value;
-	    },
-	
-	    headStr: function headStr(str, length) {
-	        return str.slice(0, length);
-	    },
-	
-	    getMaxLength: function getMaxLength(blocks) {
-	        return blocks.reduce(function (previous, current) {
-	            return previous + current;
-	        }, 0);
-	    },
-	
-	    // strip value by prefix length
-	    // for prefix: PRE
-	    // (PRE123, 3) -> 123
-	    // (PR123, 3) -> 23 this happens when user hits backspace in front of "PRE"
-	    getPrefixStrippedValue: function getPrefixStrippedValue(value, prefix, prefixLength) {
-	        if (value.slice(0, prefixLength) !== prefix) {
-	            var diffIndex = this.getFirstDiffIndex(prefix, value.slice(0, prefixLength));
-	
-	            value = prefix + value.slice(diffIndex, diffIndex + 1) + value.slice(prefixLength + 1);
-	        }
-	
-	        return value.slice(prefixLength);
-	    },
-	
-	    getFirstDiffIndex: function getFirstDiffIndex(prev, current) {
-	        var index = 0;
-	
-	        while (prev.charAt(index) === current.charAt(index)) if (prev.charAt(index++) === '') return -1;
-	
-	        return index;
-	    },
-	
-	    getFormattedValue: function getFormattedValue(value, blocks, blocksLength, delimiter, delimiters) {
-	        var result = '',
-	            multipleDelimiters = delimiters.length > 0,
-	            currentDelimiter;
-	
-	        blocks.forEach(function (length, index) {
-	            if (value.length > 0) {
-	                var sub = value.slice(0, length),
-	                    rest = value.slice(length);
-	
-	                result += sub;
-	
-	                currentDelimiter = multipleDelimiters ? delimiters[index] || currentDelimiter : delimiter;
-	
-	                if (sub.length === length && index < blocksLength - 1) {
-	                    result += currentDelimiter;
-	                }
-	
-	                // update remaining string
-	                value = rest;
-	            }
-	        });
-	
-	        return result;
-	    }
-	};
-	
-	if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = exports = Util;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Util.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
-
-/***/ }),
-/* 180 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	/**
-	 * Props Assignment
-	 *
-	 * Separate this, so react module can share the usage
-	 */
-	var DefaultProperties = {
-	    // Maybe change to object-assign
-	    // for now just keep it as simple
-	    assign: function assign(target, opts) {
-	        target = target || {};
-	        opts = opts || {};
-	
-	        // credit card
-	        target.creditCard = !!opts.creditCard;
-	        target.creditCardStrictMode = !!opts.creditCardStrictMode;
-	        target.creditCardType = '';
-	        target.onCreditCardTypeChanged = opts.onCreditCardTypeChanged || function () {};
-	
-	        // phone
-	        target.phone = !!opts.phone;
-	        target.phoneRegionCode = opts.phoneRegionCode || 'AU';
-	        target.phoneFormatter = {};
-	
-	        // date
-	        target.date = !!opts.date;
-	        target.datePattern = opts.datePattern || ['d', 'm', 'Y'];
-	        target.dateFormatter = {};
-	
-	        // numeral
-	        target.numeral = !!opts.numeral;
-	        target.numeralDecimalScale = opts.numeralDecimalScale >= 0 ? opts.numeralDecimalScale : 2;
-	        target.numeralDecimalMark = opts.numeralDecimalMark || '.';
-	        target.numeralThousandsGroupStyle = opts.numeralThousandsGroupStyle || 'thousand';
-	
-	        // others
-	        target.numericOnly = target.creditCard || target.date || !!opts.numericOnly;
-	
-	        target.uppercase = !!opts.uppercase;
-	        target.lowercase = !!opts.lowercase;
-	
-	        target.prefix = target.creditCard || target.phone || target.date ? '' : opts.prefix || '';
-	        target.prefixLength = target.prefix.length;
-	
-	        target.initValue = opts.initValue || '';
-	
-	        target.delimiter = opts.delimiter || opts.delimiter === '' ? opts.delimiter : opts.date ? '/' : opts.numeral ? ',' : opts.phone ? ' ' : ' ';
-	        target.delimiters = opts.delimiters || [];
-	
-	        target.blocks = opts.blocks || [];
-	        target.blocksLength = target.blocks.length;
-	
-	        target.maxLength = 0;
-	
-	        target.backspace = false;
-	        target.result = '';
-	
-	        return target;
-	    }
-	};
-	
-	if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = exports = DefaultProperties;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "DefaultProperties.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
-
-/***/ }),
-/* 181 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(65); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -22330,16 +21734,16 @@
 	    blocks: [4, 2, 3, 3]
 	});
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(173); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "app.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(180); if (makeExportsHot(module, __webpack_require__(65))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "app.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 182 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__resourceQuery) {var url = __webpack_require__(183);
-	var stripAnsi = __webpack_require__(189);
-	var socket = __webpack_require__(191);
+	/* WEBPACK VAR INJECTION */(function(__resourceQuery) {var url = __webpack_require__(185);
+	var stripAnsi = __webpack_require__(191);
+	var socket = __webpack_require__(193);
 	
 	function getCurrentScriptSource() {
 		// `document.currentScript` is the most accurate way to find the current script,
@@ -22472,7 +21876,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:8080"))
 
 /***/ }),
-/* 183 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -22498,8 +21902,8 @@
 	
 	'use strict';
 	
-	var punycode = __webpack_require__(184);
-	var util = __webpack_require__(185);
+	var punycode = __webpack_require__(186);
+	var util = __webpack_require__(187);
 	
 	exports.parse = urlParse;
 	exports.resolve = urlResolve;
@@ -22574,7 +21978,7 @@
 	      'gopher:': true,
 	      'file:': true
 	    },
-	    querystring = __webpack_require__(186);
+	    querystring = __webpack_require__(188);
 	
 	function urlParse(url, parseQueryString, slashesDenoteHost) {
 	  if (url && util.isObject(url) && url instanceof Url) return url;
@@ -23210,7 +22614,7 @@
 
 
 /***/ }),
-/* 184 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/punycode v1.3.2 by @mathias */
@@ -23745,7 +23149,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module), (function() { return this; }())))
 
 /***/ }),
-/* 185 */
+/* 187 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -23767,17 +23171,17 @@
 
 
 /***/ }),
-/* 186 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	exports.decode = exports.parse = __webpack_require__(187);
-	exports.encode = exports.stringify = __webpack_require__(188);
+	exports.decode = exports.parse = __webpack_require__(189);
+	exports.encode = exports.stringify = __webpack_require__(190);
 
 
 /***/ }),
-/* 187 */
+/* 189 */
 /***/ (function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -23863,7 +23267,7 @@
 
 
 /***/ }),
-/* 188 */
+/* 190 */
 /***/ (function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -23933,11 +23337,11 @@
 
 
 /***/ }),
-/* 189 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(190)();
+	var ansiRegex = __webpack_require__(192)();
 	
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -23945,7 +23349,7 @@
 
 
 /***/ }),
-/* 190 */
+/* 192 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -23955,10 +23359,10 @@
 
 
 /***/ }),
-/* 191 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var SockJS = __webpack_require__(192);
+	var SockJS = __webpack_require__(194);
 	
 	var retries = 0;
 	var sock = null;
@@ -24002,14 +23406,14 @@
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var transportList = __webpack_require__(193);
+	var transportList = __webpack_require__(195);
 	
-	module.exports = __webpack_require__(239)(transportList);
+	module.exports = __webpack_require__(241)(transportList);
 	
 	// TODO can't get rid of this until all servers do
 	if ('_sockjs_onload' in global) {
@@ -24019,45 +23423,45 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 193 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = [
 	  // streaming transports
-	  __webpack_require__(194)
-	, __webpack_require__(210)
-	, __webpack_require__(220)
+	  __webpack_require__(196)
+	, __webpack_require__(212)
 	, __webpack_require__(222)
-	, __webpack_require__(225)(__webpack_require__(222))
+	, __webpack_require__(224)
+	, __webpack_require__(227)(__webpack_require__(224))
 	
 	  // polling transports
-	, __webpack_require__(232)
-	, __webpack_require__(225)(__webpack_require__(232))
 	, __webpack_require__(234)
-	, __webpack_require__(235)
-	, __webpack_require__(225)(__webpack_require__(234))
+	, __webpack_require__(227)(__webpack_require__(234))
 	, __webpack_require__(236)
+	, __webpack_require__(237)
+	, __webpack_require__(227)(__webpack_require__(236))
+	, __webpack_require__(238)
 	];
 
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(195)
-	  , urlUtils = __webpack_require__(198)
-	  , inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
-	  , WebsocketDriver = __webpack_require__(209)
+	var utils = __webpack_require__(197)
+	  , urlUtils = __webpack_require__(200)
+	  , inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
+	  , WebsocketDriver = __webpack_require__(211)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:websocket');
+	  debug = __webpack_require__(204)('sockjs-client:websocket');
 	}
 	
 	function WebSocketTransport(transUrl, ignore, options) {
@@ -24148,12 +23552,12 @@
 
 
 /***/ }),
-/* 195 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var random = __webpack_require__(196);
+	var random = __webpack_require__(198);
 	
 	var onUnload = {}
 	  , afterUnload = false
@@ -24228,13 +23632,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 196 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/* global crypto:true */
-	var crypto = __webpack_require__(197);
+	var crypto = __webpack_require__(199);
 	
 	// This string has length 32, a power of 2, so the modulus doesn't introduce a
 	// bias.
@@ -24263,7 +23667,7 @@
 
 
 /***/ }),
-/* 197 */
+/* 199 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -24287,16 +23691,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 198 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var URL = __webpack_require__(199);
+	var URL = __webpack_require__(201);
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:utils:url');
+	  debug = __webpack_require__(204)('sockjs-client:utils:url');
 	}
 	
 	module.exports = {
@@ -24340,13 +23744,13 @@
 
 
 /***/ }),
-/* 199 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var required = __webpack_require__(200)
-	  , qs = __webpack_require__(201)
+	var required = __webpack_require__(202)
+	  , qs = __webpack_require__(203)
 	  , protocolre = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\S\s]*)/i
 	  , slashes = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//;
 	
@@ -24754,7 +24158,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 200 */
+/* 202 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24798,7 +24202,7 @@
 
 
 /***/ }),
-/* 201 */
+/* 203 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24876,7 +24280,7 @@
 
 
 /***/ }),
-/* 202 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -24885,7 +24289,7 @@
 	 * Expose `debug()` as the module.
 	 */
 	
-	exports = module.exports = __webpack_require__(204);
+	exports = module.exports = __webpack_require__(206);
 	exports.log = log;
 	exports.formatArgs = formatArgs;
 	exports.save = save;
@@ -25065,10 +24469,10 @@
 	  } catch (e) {}
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(203)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(205)))
 
 /***/ }),
-/* 203 */
+/* 205 */
 /***/ (function(module, exports) {
 
 	// shim for using process in browser
@@ -25258,7 +24662,7 @@
 
 
 /***/ }),
-/* 204 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
@@ -25274,7 +24678,7 @@
 	exports.disable = disable;
 	exports.enable = enable;
 	exports.enabled = enabled;
-	exports.humanize = __webpack_require__(205);
+	exports.humanize = __webpack_require__(207);
 	
 	/**
 	 * The currently active debug mode names, and names to skip.
@@ -25466,7 +24870,7 @@
 
 
 /***/ }),
-/* 205 */
+/* 207 */
 /***/ (function(module, exports) {
 
 	/**
@@ -25624,7 +25028,7 @@
 
 
 /***/ }),
-/* 206 */
+/* 208 */
 /***/ (function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -25653,13 +25057,13 @@
 
 
 /***/ }),
-/* 207 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , EventTarget = __webpack_require__(208)
+	var inherits = __webpack_require__(208)
+	  , EventTarget = __webpack_require__(210)
 	  ;
 	
 	function EventEmitter() {
@@ -25716,7 +25120,7 @@
 
 
 /***/ }),
-/* 208 */
+/* 210 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25784,7 +25188,7 @@
 
 
 /***/ }),
-/* 209 */
+/* 211 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -25801,17 +25205,17 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 210 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , AjaxBasedTransport = __webpack_require__(211)
-	  , XhrReceiver = __webpack_require__(215)
-	  , XHRCorsObject = __webpack_require__(216)
-	  , XHRLocalObject = __webpack_require__(218)
-	  , browser = __webpack_require__(219)
+	var inherits = __webpack_require__(208)
+	  , AjaxBasedTransport = __webpack_require__(213)
+	  , XhrReceiver = __webpack_require__(217)
+	  , XHRCorsObject = __webpack_require__(218)
+	  , XHRLocalObject = __webpack_require__(220)
+	  , browser = __webpack_require__(221)
 	  ;
 	
 	function XhrStreamingTransport(transUrl) {
@@ -25849,19 +25253,19 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 211 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , urlUtils = __webpack_require__(198)
-	  , SenderReceiver = __webpack_require__(212)
+	var inherits = __webpack_require__(208)
+	  , urlUtils = __webpack_require__(200)
+	  , SenderReceiver = __webpack_require__(214)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:ajax-based');
+	  debug = __webpack_require__(204)('sockjs-client:ajax-based');
 	}
 	
 	function createAjaxSender(AjaxObject) {
@@ -25904,20 +25308,20 @@
 
 
 /***/ }),
-/* 212 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , urlUtils = __webpack_require__(198)
-	  , BufferedSender = __webpack_require__(213)
-	  , Polling = __webpack_require__(214)
+	var inherits = __webpack_require__(208)
+	  , urlUtils = __webpack_require__(200)
+	  , BufferedSender = __webpack_require__(215)
+	  , Polling = __webpack_require__(216)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:sender-receiver');
+	  debug = __webpack_require__(204)('sockjs-client:sender-receiver');
 	}
 	
 	function SenderReceiver(transUrl, urlSuffix, senderFunc, Receiver, AjaxObject) {
@@ -25955,18 +25359,18 @@
 
 
 /***/ }),
-/* 213 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
+	var inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:buffered-sender');
+	  debug = __webpack_require__(204)('sockjs-client:buffered-sender');
 	}
 	
 	function BufferedSender(url, sender) {
@@ -26048,18 +25452,18 @@
 
 
 /***/ }),
-/* 214 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
+	var inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:polling');
+	  debug = __webpack_require__(204)('sockjs-client:polling');
 	}
 	
 	function Polling(Receiver, receiveUrl, AjaxObject) {
@@ -26111,18 +25515,18 @@
 
 
 /***/ }),
-/* 215 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
+	var inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:receiver:xhr');
+	  debug = __webpack_require__(204)('sockjs-client:receiver:xhr');
 	}
 	
 	function XhrReceiver(url, AjaxObject) {
@@ -26187,13 +25591,13 @@
 
 
 /***/ }),
-/* 216 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , XhrDriver = __webpack_require__(217)
+	var inherits = __webpack_require__(208)
+	  , XhrDriver = __webpack_require__(219)
 	  ;
 	
 	function XHRCorsObject(method, url, payload, opts) {
@@ -26208,21 +25612,21 @@
 
 
 /***/ }),
-/* 217 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var EventEmitter = __webpack_require__(207).EventEmitter
-	  , inherits = __webpack_require__(206)
-	  , utils = __webpack_require__(195)
-	  , urlUtils = __webpack_require__(198)
+	var EventEmitter = __webpack_require__(209).EventEmitter
+	  , inherits = __webpack_require__(208)
+	  , utils = __webpack_require__(197)
+	  , urlUtils = __webpack_require__(200)
 	  , XHR = global.XMLHttpRequest
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:browser:xhr');
+	  debug = __webpack_require__(204)('sockjs-client:browser:xhr');
 	}
 	
 	function AbstractXHRObject(method, url, payload, opts) {
@@ -26408,13 +25812,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 218 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , XhrDriver = __webpack_require__(217)
+	var inherits = __webpack_require__(208)
+	  , XhrDriver = __webpack_require__(219)
 	  ;
 	
 	function XHRLocalObject(method, url, payload /*, opts */) {
@@ -26431,7 +25835,7 @@
 
 
 /***/ }),
-/* 219 */
+/* 221 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -26465,15 +25869,15 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , AjaxBasedTransport = __webpack_require__(211)
-	  , XhrReceiver = __webpack_require__(215)
-	  , XDRObject = __webpack_require__(221)
+	var inherits = __webpack_require__(208)
+	  , AjaxBasedTransport = __webpack_require__(213)
+	  , XhrReceiver = __webpack_require__(217)
+	  , XDRObject = __webpack_require__(223)
 	  ;
 	
 	// According to:
@@ -26503,21 +25907,21 @@
 
 
 /***/ }),
-/* 221 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var EventEmitter = __webpack_require__(207).EventEmitter
-	  , inherits = __webpack_require__(206)
-	  , eventUtils = __webpack_require__(195)
-	  , browser = __webpack_require__(219)
-	  , urlUtils = __webpack_require__(198)
+	var EventEmitter = __webpack_require__(209).EventEmitter
+	  , inherits = __webpack_require__(208)
+	  , eventUtils = __webpack_require__(197)
+	  , browser = __webpack_require__(221)
+	  , urlUtils = __webpack_require__(200)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:sender:xdr');
+	  debug = __webpack_require__(204)('sockjs-client:sender:xdr');
 	}
 	
 	// References:
@@ -26613,16 +26017,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 222 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , AjaxBasedTransport = __webpack_require__(211)
-	  , EventSourceReceiver = __webpack_require__(223)
-	  , XHRCorsObject = __webpack_require__(216)
-	  , EventSourceDriver = __webpack_require__(224)
+	var inherits = __webpack_require__(208)
+	  , AjaxBasedTransport = __webpack_require__(213)
+	  , EventSourceReceiver = __webpack_require__(225)
+	  , XHRCorsObject = __webpack_require__(218)
+	  , EventSourceDriver = __webpack_require__(226)
 	  ;
 	
 	function EventSourceTransport(transUrl) {
@@ -26646,19 +26050,19 @@
 
 
 /***/ }),
-/* 223 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
-	  , EventSourceDriver = __webpack_require__(224)
+	var inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
+	  , EventSourceDriver = __webpack_require__(226)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:receiver:eventsource');
+	  debug = __webpack_require__(204)('sockjs-client:receiver:eventsource');
 	}
 	
 	function EventSourceReceiver(url) {
@@ -26715,7 +26119,7 @@
 
 
 /***/ }),
-/* 224 */
+/* 226 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global.EventSource;
@@ -26723,14 +26127,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 225 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , IframeTransport = __webpack_require__(226)
-	  , objectUtils = __webpack_require__(231)
+	var inherits = __webpack_require__(208)
+	  , IframeTransport = __webpack_require__(228)
+	  , objectUtils = __webpack_require__(233)
 	  ;
 	
 	module.exports = function(transport) {
@@ -26763,7 +26167,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 226 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26776,19 +26180,19 @@
 	//    http://msdn.microsoft.com/en-us/library/cc197015(v=VS.85).aspx
 	//    http://stevesouders.com/misc/test-postmessage.php
 	
-	var inherits = __webpack_require__(206)
-	  , JSON3 = __webpack_require__(227)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
-	  , version = __webpack_require__(229)
-	  , urlUtils = __webpack_require__(198)
-	  , iframeUtils = __webpack_require__(230)
-	  , eventUtils = __webpack_require__(195)
-	  , random = __webpack_require__(196)
+	var inherits = __webpack_require__(208)
+	  , JSON3 = __webpack_require__(229)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
+	  , version = __webpack_require__(231)
+	  , urlUtils = __webpack_require__(200)
+	  , iframeUtils = __webpack_require__(232)
+	  , eventUtils = __webpack_require__(197)
+	  , random = __webpack_require__(198)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:transport:iframe');
+	  debug = __webpack_require__(204)('sockjs-client:transport:iframe');
 	}
 	
 	function IframeTransport(transport, transUrl, baseUrl) {
@@ -26910,14 +26314,14 @@
 
 
 /***/ }),
-/* 227 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 	;(function () {
 	  // Detect the `define` function exposed by asynchronous module loaders. The
 	  // strict `define` check is necessary for compatibility with `r.js`.
-	  var isLoader = "function" === "function" && __webpack_require__(228);
+	  var isLoader = "function" === "function" && __webpack_require__(230);
 	
 	  // A set of types used to distinguish objects from primitives.
 	  var objectTypes = {
@@ -27819,7 +27223,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module), (function() { return this; }())))
 
 /***/ }),
-/* 228 */
+/* 230 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
@@ -27827,26 +27231,26 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 229 */
+/* 231 */
 /***/ (function(module, exports) {
 
 	module.exports = '1.1.4';
 
 
 /***/ }),
-/* 230 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var eventUtils = __webpack_require__(195)
-	  , JSON3 = __webpack_require__(227)
-	  , browser = __webpack_require__(219)
+	var eventUtils = __webpack_require__(197)
+	  , JSON3 = __webpack_require__(229)
+	  , browser = __webpack_require__(221)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:utils:iframe');
+	  debug = __webpack_require__(204)('sockjs-client:utils:iframe');
 	}
 	
 	module.exports = {
@@ -28027,7 +27431,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 231 */
+/* 233 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28057,15 +27461,15 @@
 
 
 /***/ }),
-/* 232 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , HtmlfileReceiver = __webpack_require__(233)
-	  , XHRLocalObject = __webpack_require__(218)
-	  , AjaxBasedTransport = __webpack_require__(211)
+	var inherits = __webpack_require__(208)
+	  , HtmlfileReceiver = __webpack_require__(235)
+	  , XHRLocalObject = __webpack_require__(220)
+	  , AjaxBasedTransport = __webpack_require__(213)
 	  ;
 	
 	function HtmlFileTransport(transUrl) {
@@ -28088,21 +27492,21 @@
 
 
 /***/ }),
-/* 233 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , iframeUtils = __webpack_require__(230)
-	  , urlUtils = __webpack_require__(198)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
-	  , random = __webpack_require__(196)
+	var inherits = __webpack_require__(208)
+	  , iframeUtils = __webpack_require__(232)
+	  , urlUtils = __webpack_require__(200)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
+	  , random = __webpack_require__(198)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:receiver:htmlfile');
+	  debug = __webpack_require__(204)('sockjs-client:receiver:htmlfile');
 	}
 	
 	function HtmlfileReceiver(url) {
@@ -28182,16 +27586,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 234 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , AjaxBasedTransport = __webpack_require__(211)
-	  , XhrReceiver = __webpack_require__(215)
-	  , XHRCorsObject = __webpack_require__(216)
-	  , XHRLocalObject = __webpack_require__(218)
+	var inherits = __webpack_require__(208)
+	  , AjaxBasedTransport = __webpack_require__(213)
+	  , XhrReceiver = __webpack_require__(217)
+	  , XHRCorsObject = __webpack_require__(218)
+	  , XHRLocalObject = __webpack_require__(220)
 	  ;
 	
 	function XhrPollingTransport(transUrl) {
@@ -28221,16 +27625,16 @@
 
 
 /***/ }),
-/* 235 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , AjaxBasedTransport = __webpack_require__(211)
-	  , XdrStreamingTransport = __webpack_require__(220)
-	  , XhrReceiver = __webpack_require__(215)
-	  , XDRObject = __webpack_require__(221)
+	var inherits = __webpack_require__(208)
+	  , AjaxBasedTransport = __webpack_require__(213)
+	  , XdrStreamingTransport = __webpack_require__(222)
+	  , XhrReceiver = __webpack_require__(217)
+	  , XDRObject = __webpack_require__(223)
 	  ;
 	
 	function XdrPollingTransport(transUrl) {
@@ -28250,7 +27654,7 @@
 
 
 /***/ }),
-/* 236 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -28263,10 +27667,10 @@
 	//   o you will get a spinning cursor
 	//   o for Konqueror a dumb timer is needed to detect errors
 	
-	var inherits = __webpack_require__(206)
-	  , SenderReceiver = __webpack_require__(212)
-	  , JsonpReceiver = __webpack_require__(237)
-	  , jsonpSender = __webpack_require__(238)
+	var inherits = __webpack_require__(208)
+	  , SenderReceiver = __webpack_require__(214)
+	  , JsonpReceiver = __webpack_require__(239)
+	  , jsonpSender = __webpack_require__(240)
 	  ;
 	
 	function JsonPTransport(transUrl) {
@@ -28291,22 +27695,22 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 237 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var utils = __webpack_require__(230)
-	  , random = __webpack_require__(196)
-	  , browser = __webpack_require__(219)
-	  , urlUtils = __webpack_require__(198)
-	  , inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
+	var utils = __webpack_require__(232)
+	  , random = __webpack_require__(198)
+	  , browser = __webpack_require__(221)
+	  , urlUtils = __webpack_require__(200)
+	  , inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:receiver:jsonp');
+	  debug = __webpack_require__(204)('sockjs-client:receiver:jsonp');
 	}
 	
 	function JsonpReceiver(url) {
@@ -28481,18 +27885,18 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 238 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var random = __webpack_require__(196)
-	  , urlUtils = __webpack_require__(198)
+	var random = __webpack_require__(198)
+	  , urlUtils = __webpack_require__(200)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:sender:jsonp');
+	  debug = __webpack_require__(204)('sockjs-client:sender:jsonp');
 	}
 	
 	var form, area;
@@ -28587,35 +27991,35 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 239 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	__webpack_require__(240);
+	__webpack_require__(242);
 	
-	var URL = __webpack_require__(199)
-	  , inherits = __webpack_require__(206)
-	  , JSON3 = __webpack_require__(227)
-	  , random = __webpack_require__(196)
-	  , escape = __webpack_require__(241)
-	  , urlUtils = __webpack_require__(198)
-	  , eventUtils = __webpack_require__(195)
-	  , transport = __webpack_require__(242)
-	  , objectUtils = __webpack_require__(231)
-	  , browser = __webpack_require__(219)
-	  , log = __webpack_require__(243)
-	  , Event = __webpack_require__(244)
-	  , EventTarget = __webpack_require__(208)
-	  , loc = __webpack_require__(245)
-	  , CloseEvent = __webpack_require__(246)
-	  , TransportMessageEvent = __webpack_require__(247)
-	  , InfoReceiver = __webpack_require__(248)
+	var URL = __webpack_require__(201)
+	  , inherits = __webpack_require__(208)
+	  , JSON3 = __webpack_require__(229)
+	  , random = __webpack_require__(198)
+	  , escape = __webpack_require__(243)
+	  , urlUtils = __webpack_require__(200)
+	  , eventUtils = __webpack_require__(197)
+	  , transport = __webpack_require__(244)
+	  , objectUtils = __webpack_require__(233)
+	  , browser = __webpack_require__(221)
+	  , log = __webpack_require__(245)
+	  , Event = __webpack_require__(246)
+	  , EventTarget = __webpack_require__(210)
+	  , loc = __webpack_require__(247)
+	  , CloseEvent = __webpack_require__(248)
+	  , TransportMessageEvent = __webpack_require__(249)
+	  , InfoReceiver = __webpack_require__(250)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:main');
+	  debug = __webpack_require__(204)('sockjs-client:main');
 	}
 	
 	var transports;
@@ -28755,7 +28159,7 @@
 	  this._transport.send(escape.quote(data));
 	};
 	
-	SockJS.version = __webpack_require__(229);
+	SockJS.version = __webpack_require__(231);
 	
 	SockJS.CONNECTING = 0;
 	SockJS.OPEN = 1;
@@ -28968,14 +28372,14 @@
 	
 	module.exports = function(availableTransports) {
 	  transports = transport(availableTransports);
-	  __webpack_require__(253)(SockJS, availableTransports);
+	  __webpack_require__(255)(SockJS, availableTransports);
 	  return SockJS;
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 240 */
+/* 242 */
 /***/ (function(module, exports) {
 
 	/* eslint-disable */
@@ -29433,12 +28837,12 @@
 
 
 /***/ }),
-/* 241 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var JSON3 = __webpack_require__(227);
+	var JSON3 = __webpack_require__(229);
 	
 	// Some extra characters that Chrome gets wrong, and substitutes with
 	// something else on the wire.
@@ -29489,14 +28893,14 @@
 
 
 /***/ }),
-/* 242 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:utils:transport');
+	  debug = __webpack_require__(204)('sockjs-client:utils:transport');
 	}
 	
 	module.exports = function(availableTransports) {
@@ -29545,7 +28949,7 @@
 
 
 /***/ }),
-/* 243 */
+/* 245 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -29570,7 +28974,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 244 */
+/* 246 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -29598,7 +29002,7 @@
 
 
 /***/ }),
-/* 245 */
+/* 247 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -29615,13 +29019,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 246 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , Event = __webpack_require__(244)
+	var inherits = __webpack_require__(208)
+	  , Event = __webpack_require__(246)
 	  ;
 	
 	function CloseEvent() {
@@ -29638,13 +29042,13 @@
 
 
 /***/ }),
-/* 247 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , Event = __webpack_require__(244)
+	var inherits = __webpack_require__(208)
+	  , Event = __webpack_require__(246)
 	  ;
 	
 	function TransportMessageEvent(data) {
@@ -29659,25 +29063,25 @@
 
 
 /***/ }),
-/* 248 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var EventEmitter = __webpack_require__(207).EventEmitter
-	  , inherits = __webpack_require__(206)
-	  , urlUtils = __webpack_require__(198)
-	  , XDR = __webpack_require__(221)
-	  , XHRCors = __webpack_require__(216)
-	  , XHRLocal = __webpack_require__(218)
-	  , XHRFake = __webpack_require__(249)
-	  , InfoIframe = __webpack_require__(250)
-	  , InfoAjax = __webpack_require__(252)
+	var EventEmitter = __webpack_require__(209).EventEmitter
+	  , inherits = __webpack_require__(208)
+	  , urlUtils = __webpack_require__(200)
+	  , XDR = __webpack_require__(223)
+	  , XHRCors = __webpack_require__(218)
+	  , XHRLocal = __webpack_require__(220)
+	  , XHRFake = __webpack_require__(251)
+	  , InfoIframe = __webpack_require__(252)
+	  , InfoAjax = __webpack_require__(254)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:info-receiver');
+	  debug = __webpack_require__(204)('sockjs-client:info-receiver');
 	}
 	
 	function InfoReceiver(baseUrl, urlInfo) {
@@ -29754,13 +29158,13 @@
 
 
 /***/ }),
-/* 249 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var EventEmitter = __webpack_require__(207).EventEmitter
-	  , inherits = __webpack_require__(206)
+	var EventEmitter = __webpack_require__(209).EventEmitter
+	  , inherits = __webpack_require__(208)
 	  ;
 	
 	function XHRFake(/* method, url, payload, opts */) {
@@ -29784,22 +29188,22 @@
 
 
 /***/ }),
-/* 250 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var EventEmitter = __webpack_require__(207).EventEmitter
-	  , inherits = __webpack_require__(206)
-	  , JSON3 = __webpack_require__(227)
-	  , utils = __webpack_require__(195)
-	  , IframeTransport = __webpack_require__(226)
-	  , InfoReceiverIframe = __webpack_require__(251)
+	var EventEmitter = __webpack_require__(209).EventEmitter
+	  , inherits = __webpack_require__(208)
+	  , JSON3 = __webpack_require__(229)
+	  , utils = __webpack_require__(197)
+	  , IframeTransport = __webpack_require__(228)
+	  , InfoReceiverIframe = __webpack_require__(253)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:info-iframe');
+	  debug = __webpack_require__(204)('sockjs-client:info-iframe');
 	}
 	
 	function InfoIframe(baseUrl, url) {
@@ -29860,16 +29264,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 251 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var inherits = __webpack_require__(206)
-	  , EventEmitter = __webpack_require__(207).EventEmitter
-	  , JSON3 = __webpack_require__(227)
-	  , XHRLocalObject = __webpack_require__(218)
-	  , InfoAjax = __webpack_require__(252)
+	var inherits = __webpack_require__(208)
+	  , EventEmitter = __webpack_require__(209).EventEmitter
+	  , JSON3 = __webpack_require__(229)
+	  , XHRLocalObject = __webpack_require__(220)
+	  , InfoAjax = __webpack_require__(254)
 	  ;
 	
 	function InfoReceiverIframe(transUrl) {
@@ -29899,20 +29303,20 @@
 
 
 /***/ }),
-/* 252 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var EventEmitter = __webpack_require__(207).EventEmitter
-	  , inherits = __webpack_require__(206)
-	  , JSON3 = __webpack_require__(227)
-	  , objectUtils = __webpack_require__(231)
+	var EventEmitter = __webpack_require__(209).EventEmitter
+	  , inherits = __webpack_require__(208)
+	  , JSON3 = __webpack_require__(229)
+	  , objectUtils = __webpack_require__(233)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:info-ajax');
+	  debug = __webpack_require__(204)('sockjs-client:info-ajax');
 	}
 	
 	function InfoAjax(url, AjaxObject) {
@@ -29954,23 +29358,23 @@
 
 
 /***/ }),
-/* 253 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var urlUtils = __webpack_require__(198)
-	  , eventUtils = __webpack_require__(195)
-	  , JSON3 = __webpack_require__(227)
-	  , FacadeJS = __webpack_require__(254)
-	  , InfoIframeReceiver = __webpack_require__(251)
-	  , iframeUtils = __webpack_require__(230)
-	  , loc = __webpack_require__(245)
+	var urlUtils = __webpack_require__(200)
+	  , eventUtils = __webpack_require__(197)
+	  , JSON3 = __webpack_require__(229)
+	  , FacadeJS = __webpack_require__(256)
+	  , InfoIframeReceiver = __webpack_require__(253)
+	  , iframeUtils = __webpack_require__(232)
+	  , loc = __webpack_require__(247)
 	  ;
 	
 	var debug = function() {};
 	if (true) {
-	  debug = __webpack_require__(202)('sockjs-client:iframe-bootstrap');
+	  debug = __webpack_require__(204)('sockjs-client:iframe-bootstrap');
 	}
 	
 	module.exports = function(SockJS, availableTransports) {
@@ -30062,13 +29466,13 @@
 
 
 /***/ }),
-/* 254 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var JSON3 = __webpack_require__(227)
-	  , iframeUtils = __webpack_require__(230)
+	var JSON3 = __webpack_require__(229)
+	  , iframeUtils = __webpack_require__(232)
 	  ;
 	
 	function FacadeJS(transport) {
@@ -30095,7 +29499,7 @@
 
 
 /***/ }),
-/* 255 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -30149,7 +29553,7 @@
 						check();
 					}
 	
-					__webpack_require__(256)(updatedModules, renewedModules);
+					__webpack_require__(258)(updatedModules, renewedModules);
 	
 					if(upToDate()) {
 						console.log("[HMR] App is up to date.");
@@ -30178,7 +29582,7 @@
 
 
 /***/ }),
-/* 256 */
+/* 258 */
 /***/ (function(module, exports) {
 
 	/*
