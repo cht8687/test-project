@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './react-text-collapse/react-text-collapse';
+import App from './react-hover/App-hover';
 
 const appRoot = document.createElement('div');
 appRoot.id = 'app';

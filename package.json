@@ -64,6 +64,7 @@
     "react": "^0.14.3",
     "react-accordion-components": "^0.2.0",
     "react-dom": "^0.14.3",
+    "react-hover": "^1.3.2",
     "run-sequence": "^1.1.5"
   }
 }
